@@ -1,0 +1,18 @@
+{
+  "labels": [
+    {
+      "id": "product",
+      "name": "商品问题"
+    },
+    {
+      "id": "service",
+      "name": "服务问题"
+    },
+    {
+      "id": "delivery",
+      "name": "交付问题"
+    }
+  ],
+  "empty_set_allowed": true,
+  "multiple_labels_allowed": true
+}

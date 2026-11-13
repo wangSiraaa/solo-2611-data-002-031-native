@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "ann_a",
+      "role": "annotator",
+      "token": "fixture-a"
+    },
+    {
+      "id": "ann_b",
+      "role": "annotator",
+      "token": "fixture-b"
+    },
+    {
+      "id": "arbiter",
+      "role": "arbiter",
+      "token": "fixture-arbiter"
+    }
+  ]
+}
