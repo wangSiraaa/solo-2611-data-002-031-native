@@ -1,0 +1,3 @@
+# 运行期依赖见 requirements.txt；本文件只声明验证用工具。
+pytest>=7.4
+pyflakes>=3.1
