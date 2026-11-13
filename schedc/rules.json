@@ -1,0 +1,136 @@
+{
+  "rules": [
+    {
+      "rule_id": "ny-spring-skip",
+      "timezone": "America/New_York",
+      "local_time": "02:30:00",
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-15",
+      "frequency": {
+        "type": "daily"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    },
+    {
+      "rule_id": "ny-fall-first",
+      "timezone": "America/New_York",
+      "local_time": "01:30:00",
+      "start_date": "2026-10-25",
+      "end_date": "2026-11-08",
+      "frequency": {
+        "type": "daily"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    },
+    {
+      "rule_id": "ny-fall-second",
+      "timezone": "America/New_York",
+      "local_time": "01:30:00",
+      "start_date": "2026-10-25",
+      "end_date": "2026-11-08",
+      "frequency": {
+        "type": "daily"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "second"
+    },
+    {
+      "rule_id": "ny-fall-both",
+      "timezone": "America/New_York",
+      "local_time": "01:30:00",
+      "start_date": "2026-10-25",
+      "end_date": "2026-11-08",
+      "frequency": {
+        "type": "daily"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "both"
+    },
+    {
+      "rule_id": "sh-daily",
+      "timezone": "Asia/Shanghai",
+      "local_time": "09:00:00",
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "frequency": {
+        "type": "daily"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    },
+    {
+      "rule_id": "ny-month-end",
+      "timezone": "America/New_York",
+      "local_time": "21:00:00",
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "frequency": {
+        "type": "monthly",
+        "day": "L"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    },
+    {
+      "rule_id": "sh-monthly-31",
+      "timezone": "Asia/Shanghai",
+      "local_time": "10:00:00",
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "frequency": {
+        "type": "monthly",
+        "day": 31
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    },
+    {
+      "rule_id": "ny-weekly-mon",
+      "timezone": "America/New_York",
+      "local_time": "09:00:00",
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-31",
+      "frequency": {
+        "type": "weekly",
+        "weekdays": [
+          1
+        ]
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    },
+    {
+      "rule_id": "utc-midnight",
+      "timezone": "Etc/UTC",
+      "local_time": "00:00:00",
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "frequency": {
+        "type": "daily"
+      },
+      "on_nonexistent": "skip",
+      "on_repeated": "first"
+    }
+  ],
+  "exceptions": [
+    {
+      "rule_id": "ny-weekly-mon",
+      "date": "2026-03-09",
+      "action": "skip"
+    },
+    {
+      "rule_id": "ny-weekly-mon",
+      "date": "2026-03-11",
+      "action": "replace",
+      "replace_time": "15:00:00"
+    },
+    {
+      "rule_id": "ny-weekly-mon",
+      "date": "2026-03-16",
+      "action": "replace",
+      "replace_time": "07:30:00"
+    }
+  ]
+}
