@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+
+# 本地运行时数据 / 数据库 / 日志 / 合成输出 (全部由项目生成, 不入库)
+runtime/
+.runtime/
+*.log
+results.jsonl
