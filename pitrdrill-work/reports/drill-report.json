@@ -1,0 +1,1814 @@
+{
+  "archive_sets": {
+    "set-full": {
+      "created_at": "2026-11-13T14:04:41+0000",
+      "excluded": [],
+      "files": [
+        "000000010000000000000001",
+        "000000010000000000000002",
+        "000000010000000000000002.00000028.backup",
+        "000000010000000000000003",
+        "000000010000000000000004",
+        "000000010000000000000005",
+        "000000010000000000000005.00000028.backup",
+        "000000010000000000000006",
+        "000000010000000000000007"
+      ],
+      "path": "/workspace/pitrdrill-work/archive-sets/set-full"
+    },
+    "set-full-copy": {
+      "created_at": "2026-11-13T14:05:30+0000",
+      "excluded": [],
+      "files": [
+        "000000010000000000000001",
+        "000000010000000000000002",
+        "000000010000000000000002.00000028.backup",
+        "000000010000000000000003",
+        "000000010000000000000004",
+        "000000010000000000000005",
+        "000000010000000000000005.00000028.backup",
+        "000000010000000000000006",
+        "000000010000000000000007"
+      ],
+      "path": "/workspace/pitrdrill-work/archive-sets/set-full-copy"
+    },
+    "set-gap": {
+      "created_at": "2026-11-13T14:04:48+0000",
+      "excluded": [
+        "000000010000000000000003"
+      ],
+      "files": [
+        "000000010000000000000001",
+        "000000010000000000000002",
+        "000000010000000000000002.00000028.backup",
+        "000000010000000000000004",
+        "000000010000000000000005",
+        "000000010000000000000005.00000028.backup",
+        "000000010000000000000006",
+        "000000010000000000000007"
+      ],
+      "path": "/workspace/pitrdrill-work/archive-sets/set-gap"
+    },
+    "set-tli2": {
+      "created_at": "2026-11-13T14:05:31+0000",
+      "excluded": [],
+      "files": [
+        "000000010000000000000001",
+        "000000010000000000000002",
+        "000000010000000000000002.00000028.backup",
+        "000000010000000000000003",
+        "000000010000000000000004",
+        "000000010000000000000005",
+        "000000010000000000000005.00000028.backup",
+        "000000010000000000000006",
+        "000000010000000000000007",
+        "000000010000000000000008"
+      ],
+      "path": "/workspace/pitrdrill-work/archive-sets/set-tli2"
+    },
+    "set-trunc": {
+      "created_at": "2026-11-13T14:05:31+0000",
+      "excluded": [],
+      "files": [
+        "000000010000000000000001",
+        "000000010000000000000002",
+        "000000010000000000000002.00000028.backup",
+        "000000010000000000000003",
+        "000000010000000000000004",
+        "000000010000000000000005",
+        "000000010000000000000005.00000028.backup",
+        "000000010000000000000006",
+        "000000010000000000000007",
+        "000000010000000000000008"
+      ],
+      "path": "/workspace/pitrdrill-work/archive-sets/set-trunc"
+    },
+    "set-waiting": {
+      "created_at": "2026-11-13T14:04:55+0000",
+      "excluded": [
+        "000000010000000000000003"
+      ],
+      "files": [
+        "000000010000000000000001",
+        "000000010000000000000002",
+        "000000010000000000000002.00000028.backup",
+        "000000010000000000000004",
+        "000000010000000000000005",
+        "000000010000000000000005.00000028.backup",
+        "000000010000000000000006",
+        "000000010000000000000007"
+      ],
+      "path": "/workspace/pitrdrill-work/archive-sets/set-waiting"
+    }
+  },
+  "backups": {
+    "b-foreign-identity": {
+      "backup_label": {
+        "BACKUP FROM": "primary",
+        "BACKUP METHOD": "streamed",
+        "CHECKPOINT LOCATION": "0/2000060",
+        "LABEL": "pitrdrill-b1-early",
+        "START TIME": "2026-11-13 14:04:28 GMT",
+        "START TIMELINE": "1",
+        "START WAL LOCATION": "0/2000028 (file 000000010000000000000002)"
+      },
+      "backup_timeline": 1,
+      "backup_wal_segments": [
+        "000000010000000000000002"
+      ],
+      "checkpoint_lsn": "0/2000060",
+      "corrupt": true,
+      "created_at": "2026-11-13T14:05:30+0000",
+      "manifest_sha256": null,
+      "name": "b-foreign-identity",
+      "note": "故障演练: 外来 pg_control(错身份)",
+      "path": "/workspace/pitrdrill-work/backups/b-foreign-identity",
+      "start_lsn": "0/2000028",
+      "system_identifier": "7707656955484969715",
+      "verifybackup_output": "故意替换 pg_control, 预期校验失败",
+      "verifybackup_rc": -1
+    },
+    "b1-early": {
+      "backup_label": {
+        "BACKUP FROM": "primary",
+        "BACKUP METHOD": "streamed",
+        "CHECKPOINT LOCATION": "0/2000060",
+        "LABEL": "pitrdrill-b1-early",
+        "START TIME": "2026-11-13 14:04:28 GMT",
+        "START TIMELINE": "1",
+        "START WAL LOCATION": "0/2000028 (file 000000010000000000000002)"
+      },
+      "backup_timeline": 1,
+      "backup_wal_segments": [
+        "000000010000000000000002"
+      ],
+      "checkpoint_lsn": "0/2000060",
+      "created_at": "2026-11-13T14:04:29+0000",
+      "label": "pitrdrill-b1-early",
+      "manifest_sha256": "6f93f26e2c94d47dc8a4cd5f9d9aa614cb7b65319ea2566f5f46c2a33c4b4813",
+      "name": "b1-early",
+      "note": "早期基础备份(心跳开始后)",
+      "path": "/workspace/pitrdrill-work/backups/b1-early",
+      "source_port": 55432,
+      "start_lsn": "0/2000028",
+      "system_identifier": "7707656682046675350",
+      "verifybackup_output": "backup successfully verified",
+      "verifybackup_rc": 0
+    },
+    "b2-mid": {
+      "backup_label": {
+        "BACKUP FROM": "primary",
+        "BACKUP METHOD": "streamed",
+        "CHECKPOINT LOCATION": "0/5000060",
+        "LABEL": "pitrdrill-b2-mid",
+        "START TIME": "2026-11-13 14:04:29 GMT",
+        "START TIMELINE": "1",
+        "START WAL LOCATION": "0/5000028 (file 000000010000000000000005)"
+      },
+      "backup_timeline": 1,
+      "backup_wal_segments": [
+        "000000010000000000000005"
+      ],
+      "checkpoint_lsn": "0/5000060",
+      "created_at": "2026-11-13T14:04:31+0000",
+      "label": "pitrdrill-b2-mid",
+      "manifest_sha256": "a1803a424b228214bfd1f54181a2fefce81ae650823ed1dfa26f3746a8e1aebf",
+      "name": "b2-mid",
+      "note": "中期基础备份(rp_early 之后)",
+      "path": "/workspace/pitrdrill-work/backups/b2-mid",
+      "source_port": 55432,
+      "start_lsn": "0/5000028",
+      "system_identifier": "7707656682046675350",
+      "verifybackup_output": "backup successfully verified",
+      "verifybackup_rc": 0
+    }
+  },
+  "command_log": [
+    {
+      "argv": [
+        "/usr/lib/postgresql/16/bin/initdb",
+        "-D",
+        "/workspace/pitrdrill-work/source/data",
+        "-U",
+        "postgres",
+        "--auth-local=trust",
+        "--auth-host=trust",
+        "-E",
+        "UTF8",
+        "--locale=C"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:27+0000",
+      "where": "initdb attempt=1"
+    },
+    {
+      "argv": [
+        "/usr/lib/postgresql/16/bin/pg_ctl",
+        "-D",
+        "/workspace/pitrdrill-work/source/data",
+        "-l",
+        "/workspace/pitrdrill-work/source/source.log",
+        "-w",
+        "-t",
+        "60",
+        "start"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:27+0000",
+      "where": "pg_ctl start source"
+    },
+    {
+      "argv": [
+        "psql:pitrdrill_biz",
+        "schema"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:27+0000",
+      "where": "create schema"
+    },
+    {
+      "argv": [
+        "/usr/lib/postgresql/16/bin/pg_basebackup",
+        "-h",
+        "/tmp/pitrdrill-sockets/pitrdrill-work/source",
+        "-p",
+        "55432",
+        "-U",
+        "postgres",
+        "-D",
+        "/workspace/pitrdrill-work/backups/b1-early",
+        "-F",
+        "p",
+        "-X",
+        "stream",
+        "-c",
+        "fast",
+        "-l",
+        "pitrdrill-b1-early",
+        "--manifest-checksums=sha256",
+        "--no-password"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:29+0000",
+      "where": "pg_basebackup attempt=1"
+    },
+    {
+      "argv": [
+        "/usr/lib/postgresql/16/bin/pg_verifybackup",
+        "/workspace/pitrdrill-work/backups/b1-early"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:29+0000",
+      "where": "pg_verifybackup"
+    },
+    {
+      "argv": [
+        "/usr/lib/postgresql/16/bin/pg_basebackup",
+        "-h",
+        "/tmp/pitrdrill-sockets/pitrdrill-work/source",
+        "-p",
+        "55432",
+        "-U",
+        "postgres",
+        "-D",
+        "/workspace/pitrdrill-work/backups/b2-mid",
+        "-F",
+        "p",
+        "-X",
+        "stream",
+        "-c",
+        "fast",
+        "-l",
+        "pitrdrill-b2-mid",
+        "--manifest-checksums=sha256",
+        "--no-password"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:31+0000",
+      "where": "pg_basebackup attempt=1"
+    },
+    {
+      "argv": [
+        "/usr/lib/postgresql/16/bin/pg_verifybackup",
+        "/workspace/pitrdrill-work/backups/b2-mid"
+      ],
+      "rc": 0,
+      "ts": "2026-11-13T14:04:31+0000",
+      "where": "pg_verifybackup"
+    }
+  ],
+  "config": {
+    "archive_wait_budget": 120,
+    "base_port": 55432,
+    "gap_wait_budget": 30,
+    "pgbin": "/usr/lib/postgresql/16/bin",
+    "recovery_wait_budget": 180,
+    "restore_port_base": 55500,
+    "root": "/workspace/pitrdrill-work",
+    "source_port": 0,
+    "tick_seconds": 0.5,
+    "wal_seg_size_bytes": 16777216,
+    "workload_seconds": 20.0
+  },
+  "created_at": "2026-11-13T14:04:26+0000",
+  "events": [
+    {
+      "db": "pitrdrill_biz",
+      "kind": "schema_created",
+      "ts": "2026-11-13T14:04:27+0000"
+    },
+    {
+      "backup_timeline": 1,
+      "checkpoint_lsn": "0/2000060",
+      "kind": "base_backup",
+      "name": "b1-early",
+      "start_lsn": "0/2000028",
+      "system_identifier": "7707656682046675350",
+      "ts": "2026-11-13T14:04:29+0000"
+    },
+    {
+      "commit_lsn": "0/30013B0",
+      "detail": {
+        "meaning": "早期见证标记",
+        "phase": "before-rp-early"
+      },
+      "event_seq": 1,
+      "kind": "witness",
+      "marker": "MARKER-M1",
+      "ts": "2026-11-13T14:04:29+0000"
+    },
+    {
+      "created_at": "2026-11-13T14:04:29+0000",
+      "kind": "restore_point",
+      "lsn": "0/3003600",
+      "name": "rp_early",
+      "note": "早期恢复点(误操作之前)",
+      "timeline": 1,
+      "ts": "2026-11-13T14:04:29+0000"
+    },
+    {
+      "backup_timeline": 1,
+      "checkpoint_lsn": "0/5000060",
+      "kind": "base_backup",
+      "name": "b2-mid",
+      "start_lsn": "0/5000028",
+      "system_identifier": "7707656682046675350",
+      "ts": "2026-11-13T14:04:31+0000"
+    },
+    {
+      "deleted_children_parent": 8,
+      "kind": "pre_target_dml",
+      "ts": "2026-11-13T14:04:31+0000",
+      "updated_parents": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "commit_lsn": "0/60021A8",
+      "detail": {
+        "meaning": "含更新删除后的见证标记",
+        "phase": "before-rp-late"
+      },
+      "event_seq": 3,
+      "kind": "witness",
+      "marker": "MARKER-M2",
+      "ts": "2026-11-13T14:04:31+0000"
+    },
+    {
+      "created_at": "2026-11-13T14:04:31+0000",
+      "kind": "restore_point",
+      "lsn": "0/6002540",
+      "name": "rp_late",
+      "note": "晚期恢复点(误操作之前, 含正常更新删除)",
+      "timeline": 1,
+      "ts": "2026-11-13T14:04:31+0000"
+    },
+    {
+      "commit_lsn": "0/7000768",
+      "detail": {
+        "meaning": "目标之后的标记(恢复应排除)",
+        "phase": "after-rp-late"
+      },
+      "event_seq": 4,
+      "kind": "witness",
+      "marker": "MARKER-M3",
+      "ts": "2026-11-13T14:04:31+0000"
+    },
+    {
+      "after_lsn": "0/70024E0",
+      "before_lsn": "0/7001F50",
+      "corrupted_parent": 5,
+      "deleted_parents": [
+        3,
+        7
+      ],
+      "inserted_parent": 9001,
+      "kind": "mishap",
+      "ts": "2026-11-13T14:04:38+0000"
+    },
+    {
+      "kind": "workload_summary",
+      "last_lsn": "pg_current_wal_lsn \n--------------------\n 0/8000B08\n(1 row)",
+      "ticks": 46,
+      "ts": "2026-11-13T14:04:41+0000"
+    }
+  ],
+  "failure_demos": {
+    "b-foreign-identity": {
+      "backup": "b-foreign-identity",
+      "created_at": "2026-11-13T14:05:30+0000",
+      "demo": "wrong_identity",
+      "foreign_system_identifier": "7707656955484969715",
+      "path": "/workspace/pitrdrill-work/backups/b-foreign-identity"
+    },
+    "set-gap": {
+      "created_at": "2026-11-13T14:04:48+0000",
+      "demo": "gap",
+      "forced_start_result": {
+        "log_tail": [
+          "2026-11-13 14:04:55.403 GMT [6826] LOG:  redo done at 0/2000100 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s",
+          "2026-11-13 14:04:55.403 GMT [6826] FATAL:  recovery ended before configured recovery target was reached",
+          "2026-11-13 14:04:55.404 GMT [6823] LOG:  startup process (PID 6826) exited with exit code 1",
+          "2026-11-13 14:04:55.404 GMT [6823] LOG:  terminating any other active server processes",
+          "2026-11-13 14:04:55.405 GMT [6823] LOG:  shutting down due to startup process failure",
+          "2026-11-13 14:04:55.405 GMT [6823] LOG:  database system is shut down"
+        ],
+        "reasons": [
+          "恢复实例启动阶段即退出: 2026-11-13 14:04:55.403 GMT [6826] FATAL:  recovery ended before configured recovery target was reached"
+        ],
+        "result": "FAILED"
+      },
+      "removed_segment": "000000010000000000000003",
+      "required": [
+        "000000010000000000000002",
+        "000000010000000000000003"
+      ],
+      "set": "set-gap"
+    },
+    "set-tli2": {
+      "created_at": "2026-11-13T14:05:31+0000",
+      "demo": "wrong_timeline",
+      "renamed": [
+        [
+          "000000010000000000000007",
+          "000000020000000000000007"
+        ],
+        [
+          "000000010000000000000008",
+          "000000020000000000000008"
+        ],
+        [
+          "000000010000000000000001",
+          "000000020000000000000001"
+        ],
+        [
+          "000000010000000000000006",
+          "000000020000000000000006"
+        ]
+      ],
+      "set": "set-tli2"
+    },
+    "set-trunc": {
+      "created_at": "2026-11-13T14:05:31+0000",
+      "demo": "truncated",
+      "segment": "000000010000000000000003",
+      "set": "set-trunc",
+      "size_after": 16769024,
+      "size_before": 16777216,
+      "source_archive_untouched": true
+    },
+    "set-waiting": {
+      "demo": "gated_archive_wait",
+      "gated_segment": "000000010000000000000003",
+      "released_result": "TARGET_REACHED",
+      "timeout_budget_seconds": 30,
+      "timeout_reasons": [
+        "归档尚未到位, 恢复在等待 WAL: 000000010000000000000003(门控/归档迟到)",
+        "ARCHIVE_WAIT_TIMEOUT: 等待缺失 WAL 超过预算 30s, 保留诊断, 未静默恢复到更早位置"
+      ],
+      "timeout_restore": "F-wait-timeout",
+      "timeout_result": "WAITING_ARCHIVE"
+    }
+  },
+  "phase": "SOURCE_RUNNING",
+  "restore_points": [
+    {
+      "created_at": "2026-11-13T14:04:29+0000",
+      "lsn": "0/3003600",
+      "name": "rp_early",
+      "note": "早期恢复点(误操作之前)",
+      "timeline": 1
+    },
+    {
+      "created_at": "2026-11-13T14:04:31+0000",
+      "lsn": "0/6002540",
+      "name": "rp_late",
+      "note": "晚期恢复点(误操作之前, 含正常更新删除)",
+      "timeline": 1
+    }
+  ],
+  "restores": {
+    "F-gap-preflight": {
+      "archive_set": "set-gap",
+      "backup": "b1-early",
+      "commands": [],
+      "created_at": "2026-11-13T14:04:48+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-gap-preflight/data",
+      "failure_reasons": [
+        "ARCHIVE_GAP: 目标之前仍存在归档缺口(等待 5s 后): 000000010000000000000003"
+      ],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/F-gap-preflight/restore.log",
+      "name": "F-gap-preflight",
+      "phase": "FAILED",
+      "pid": -1,
+      "port": 0,
+      "preflight": {
+        "archive_set": "set-gap",
+        "backup": "b1-early",
+        "checked_at": "2026-11-13T14:04:48+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007"
+            ],
+            "complete": false,
+            "covered_by_backup": [],
+            "missing": [
+              "000000010000000000000003"
+            ],
+            "present_in_backup_pgwal": [
+              "000000010000000000000002"
+            ],
+            "required": [
+              "000000010000000000000002",
+              "000000010000000000000003"
+            ]
+          },
+          "gap_wait_budget_seconds": 5,
+          "pg_verifybackup": {
+            "output": "backup successfully verified",
+            "rc": 0
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              }
+            ],
+            "problems": []
+          },
+          "system_identifier": {
+            "backup": "7707656682046675350",
+            "match": true,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [],
+            "required": 1
+          }
+        },
+        "hard_errors": [
+          "ARCHIVE_GAP: 目标之前仍存在归档缺口(等待 5s 后): 000000010000000000000003"
+        ],
+        "passed": false,
+        "problems": [],
+        "target": "rp_early"
+      },
+      "promoted_timeline": null,
+      "result": "FAILED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-gap-preflight",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "F-gap-running": {
+      "archive_set": "set-gap",
+      "backup": "b1-early",
+      "commands": [
+        {
+          "port": 55433,
+          "restore_command": "/workspace/pitrdrill-work/restores/F-gap-running/pitrdrill-restore-fetch.sh",
+          "step": "prepare_restore_dir",
+          "ts": "2026-11-13T14:04:55+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/F-gap-running/data",
+            "-l",
+            "/workspace/pitrdrill-work/restores/F-gap-running/restore.log",
+            "-w",
+            "-t",
+            "30",
+            "start"
+          ],
+          "rc": 1,
+          "stderr_tail": "pg_ctl: could not start server\nExamine the log output.\n",
+          "step": "pg_ctl start",
+          "ts": "2026-11-13T14:04:55+0000"
+        }
+      ],
+      "created_at": "2026-11-13T14:04:53+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-gap-running/data",
+      "failure_reasons": [
+        "恢复实例启动阶段即退出: 2026-11-13 14:04:55.403 GMT [6826] FATAL:  recovery ended before configured recovery target was reached"
+      ],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/F-gap-running/restore.log",
+      "name": "F-gap-running",
+      "phase": "FAILED",
+      "pid": -1,
+      "port": 55433,
+      "preflight": {},
+      "promoted_timeline": null,
+      "result": "FAILED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-gap-running",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "F-identity": {
+      "archive_set": "set-full-copy",
+      "backup": "b-foreign-identity",
+      "commands": [],
+      "created_at": "2026-11-13T14:05:30+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-identity/data",
+      "failure_reasons": [
+        "WRONG_DATABASE_IDENTITY: 备份 system identifier 7707656955484969715 != 源库 7707656682046675350(拿错数据库的基础备份)",
+        "BACKUP_CORRUPT: pg_verifybackup: error: checksum mismatch for file \"global/pg_control\""
+      ],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/F-identity/restore.log",
+      "name": "F-identity",
+      "phase": "FAILED",
+      "pid": -1,
+      "port": 0,
+      "preflight": {
+        "archive_set": "set-full-copy",
+        "backup": "b-foreign-identity",
+        "checked_at": "2026-11-13T14:05:30+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000003",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007"
+            ],
+            "complete": true,
+            "covered_by_backup": [],
+            "missing": [],
+            "present_in_backup_pgwal": [
+              "000000010000000000000002"
+            ],
+            "required": [
+              "000000010000000000000002",
+              "000000010000000000000003"
+            ]
+          },
+          "gap_wait_budget_seconds": 2,
+          "pg_verifybackup": {
+            "output": "pg_verifybackup: error: checksum mismatch for file \"global/pg_control\"",
+            "rc": 1
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Sequence    len (rec/tot):     99/    99, tx:        750, lsn: 0/03000028, prev 0/02000100, desc: LOG rel 1663/16384/16395, blkref #0: rel 1663/16384/1639",
+                "file": "000000010000000000000003",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              }
+            ],
+            "problems": []
+          },
+          "system_identifier": {
+            "backup": "7707656955484969715",
+            "match": false,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [],
+            "required": 1
+          }
+        },
+        "hard_errors": [
+          "WRONG_DATABASE_IDENTITY: 备份 system identifier 7707656955484969715 != 源库 7707656682046675350(拿错数据库的基础备份)",
+          "BACKUP_CORRUPT: pg_verifybackup: error: checksum mismatch for file \"global/pg_control\""
+        ],
+        "passed": false,
+        "problems": [],
+        "target": "rp_early"
+      },
+      "promoted_timeline": null,
+      "result": "FAILED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-identity",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "F-timeline": {
+      "archive_set": "set-tli2",
+      "backup": "b1-early",
+      "commands": [],
+      "created_at": "2026-11-13T14:05:31+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-timeline/data",
+      "failure_reasons": [
+        "WRONG_TIMELINE: 归档集合存在错误时间线段 -> 000000020000000000000001: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000002: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000003: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000004: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000005: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000006: 时间线 2 与要求的 1 不符(错误时间线); "
+      ],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/F-timeline/restore.log",
+      "name": "F-timeline",
+      "phase": "FAILED",
+      "pid": -1,
+      "port": 0,
+      "preflight": {
+        "archive_set": "set-tli2",
+        "backup": "b1-early",
+        "checked_at": "2026-11-13T14:05:31+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000003",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007",
+              "000000010000000000000008",
+              "000000020000000000000001",
+              "000000020000000000000002",
+              "000000020000000000000003",
+              "000000020000000000000004",
+              "000000020000000000000005",
+              "000000020000000000000006",
+              "000000020000000000000007",
+              "000000020000000000000008"
+            ],
+            "complete": true,
+            "covered_by_backup": [],
+            "missing": [],
+            "present_in_backup_pgwal": [
+              "000000010000000000000002"
+            ],
+            "required": [
+              "000000010000000000000002",
+              "000000010000000000000003"
+            ]
+          },
+          "gap_wait_budget_seconds": 2,
+          "pg_verifybackup": {
+            "output": "backup successfully verified",
+            "rc": 0
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Sequence    len (rec/tot):     99/    99, tx:        750, lsn: 0/03000028, prev 0/02000100, desc: LOG rel 1663/16384/16395, blkref #0: rel 1663/16384/1639",
+                "file": "000000010000000000000003",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        823, lsn: 0/08000028, prev 0/070024E0, desc: INSERT off: 41, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000008",
+                "ok": true
+              }
+            ],
+            "problems": []
+          },
+          "system_identifier": {
+            "backup": "7707656682046675350",
+            "match": true,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [
+              "000000020000000000000001: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000002: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000003: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000004: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000005: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000006: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000007: 时间线 2 与要求的 1 不符(错误时间线)",
+              "000000020000000000000008: 时间线 2 与要求的 1 不符(错误时间线)"
+            ],
+            "required": 1
+          }
+        },
+        "hard_errors": [
+          "WRONG_TIMELINE: 归档集合存在错误时间线段 -> 000000020000000000000001: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000002: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000003: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000004: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000005: 时间线 2 与要求的 1 不符(错误时间线); 000000020000000000000006: 时间线 2 与要求的 1 不符(错误时间线); "
+        ],
+        "passed": false,
+        "problems": [],
+        "target": "rp_early"
+      },
+      "promoted_timeline": null,
+      "result": "FAILED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-timeline",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "F-trunc-preflight": {
+      "archive_set": "set-trunc",
+      "backup": "b1-early",
+      "commands": [],
+      "created_at": "2026-11-13T14:05:31+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-trunc-preflight/data",
+      "failure_reasons": [
+        "ARCHIVE_TRUNCATED_OR_CORRUPT: 000000010000000000000003: 大小异常 16769024 != 预期 16777216(疑似截断/损坏); 000000010000000000000003: sha256 不匹配(疑似篡改/写入不完整)"
+      ],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/F-trunc-preflight/restore.log",
+      "name": "F-trunc-preflight",
+      "phase": "FAILED",
+      "pid": -1,
+      "port": 0,
+      "preflight": {
+        "archive_set": "set-trunc",
+        "backup": "b1-early",
+        "checked_at": "2026-11-13T14:05:31+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000003",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007",
+              "000000010000000000000008"
+            ],
+            "complete": true,
+            "covered_by_backup": [],
+            "missing": [],
+            "present_in_backup_pgwal": [
+              "000000010000000000000002"
+            ],
+            "required": [
+              "000000010000000000000002",
+              "000000010000000000000003"
+            ]
+          },
+          "gap_wait_budget_seconds": 2,
+          "pg_verifybackup": {
+            "output": "backup successfully verified",
+            "rc": 0
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Sequence    len (rec/tot):     99/    99, tx:        750, lsn: 0/03000028, prev 0/02000100, desc: LOG rel 1663/16384/16395, blkref #0: rel 1663/16384/1639",
+                "file": "000000010000000000000003",
+                "ok": false
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        823, lsn: 0/08000028, prev 0/070024E0, desc: INSERT off: 41, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000008",
+                "ok": true
+              }
+            ],
+            "problems": [
+              "000000010000000000000003: 大小异常 16769024 != 预期 16777216(疑似截断/损坏)",
+              "000000010000000000000003: sha256 不匹配(疑似篡改/写入不完整)"
+            ]
+          },
+          "system_identifier": {
+            "backup": "7707656682046675350",
+            "match": true,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [],
+            "required": 1
+          }
+        },
+        "hard_errors": [
+          "ARCHIVE_TRUNCATED_OR_CORRUPT: 000000010000000000000003: 大小异常 16769024 != 预期 16777216(疑似截断/损坏); 000000010000000000000003: sha256 不匹配(疑似篡改/写入不完整)"
+        ],
+        "passed": false,
+        "problems": [],
+        "target": "rp_early"
+      },
+      "promoted_timeline": null,
+      "result": "FAILED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-trunc-preflight",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "F-trunc-running": {
+      "archive_set": "set-trunc",
+      "backup": "b1-early",
+      "commands": [
+        {
+          "port": 55434,
+          "restore_command": "/workspace/pitrdrill-work/restores/F-trunc-running/pitrdrill-restore-fetch.sh",
+          "step": "prepare_restore_dir",
+          "ts": "2026-11-13T14:05:33+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/F-trunc-running/data",
+            "-l",
+            "/workspace/pitrdrill-work/restores/F-trunc-running/restore.log",
+            "-w",
+            "-t",
+            "30",
+            "start"
+          ],
+          "rc": 1,
+          "stderr_tail": "pg_ctl: could not start server\nExamine the log output.\n",
+          "step": "pg_ctl start",
+          "ts": "2026-11-13T14:05:33+0000"
+        }
+      ],
+      "created_at": "2026-11-13T14:05:31+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-trunc-running/data",
+      "failure_reasons": [
+        "恢复实例启动阶段即退出: 2026-11-13 14:05:33.633 GMT [7012] FATAL:  archive file \"000000010000000000000003\" has wrong size: 16769024 instead of 16777216"
+      ],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/F-trunc-running/restore.log",
+      "name": "F-trunc-running",
+      "phase": "FAILED",
+      "pid": -1,
+      "port": 55434,
+      "preflight": {
+        "archive_set": "set-trunc",
+        "backup": "b1-early",
+        "checked_at": "2026-11-13T14:05:31+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000003",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007",
+              "000000010000000000000008"
+            ],
+            "complete": true,
+            "covered_by_backup": [],
+            "missing": [],
+            "present_in_backup_pgwal": [
+              "000000010000000000000002"
+            ],
+            "required": [
+              "000000010000000000000002",
+              "000000010000000000000003"
+            ]
+          },
+          "gap_wait_budget_seconds": 2,
+          "pg_verifybackup": {
+            "output": "backup successfully verified",
+            "rc": 0
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Sequence    len (rec/tot):     99/    99, tx:        750, lsn: 0/03000028, prev 0/02000100, desc: LOG rel 1663/16384/16395, blkref #0: rel 1663/16384/1639",
+                "file": "000000010000000000000003",
+                "ok": false
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        823, lsn: 0/08000028, prev 0/070024E0, desc: INSERT off: 41, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000008",
+                "ok": true
+              }
+            ],
+            "problems": [
+              "000000010000000000000003: 大小异常 16769024 != 预期 16777216(疑似截断/损坏)",
+              "000000010000000000000003: sha256 不匹配(疑似篡改/写入不完整)"
+            ]
+          },
+          "system_identifier": {
+            "backup": "7707656682046675350",
+            "match": true,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [],
+            "required": 1
+          }
+        },
+        "hard_errors": [
+          "ARCHIVE_TRUNCATED_OR_CORRUPT: 000000010000000000000003: 大小异常 16769024 != 预期 16777216(疑似截断/损坏); 000000010000000000000003: sha256 不匹配(疑似篡改/写入不完整)"
+        ],
+        "passed": false,
+        "problems": [],
+        "target": "rp_early"
+      },
+      "promoted_timeline": null,
+      "result": "FAILED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-trunc-running",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "F-wait-released": {
+      "archive_set": "set-waiting",
+      "backup": "b1-early",
+      "commands": [
+        {
+          "port": 55433,
+          "restore_command": "/workspace/pitrdrill-work/restores/F-wait-released/pitrdrill-restore-gated.sh",
+          "step": "prepare_restore_dir",
+          "ts": "2026-11-13T14:05:28+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/F-wait-released/data",
+            "-l",
+            "/workspace/pitrdrill-work/restores/F-wait-released/restore.log",
+            "-w",
+            "-t",
+            "30",
+            "start"
+          ],
+          "rc": 0,
+          "stderr_tail": "",
+          "step": "pg_ctl start",
+          "ts": "2026-11-13T14:05:28+0000"
+        }
+      ],
+      "created_at": "2026-11-13T14:05:27+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-wait-released/data",
+      "failure_reasons": [],
+      "gate_file": "/workspace/pitrdrill-work/tmp/set-waiting.gate",
+      "gated": true,
+      "log_path": "/workspace/pitrdrill-work/restores/F-wait-released/restore.log",
+      "name": "F-wait-released",
+      "phase": "TARGET_REACHED",
+      "pid": 6869,
+      "port": 55433,
+      "preflight": {},
+      "promoted_timeline": null,
+      "result": "TARGET_REACHED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-wait-released",
+      "target": "rp_early",
+      "target_evidence": {
+        "controldata_state": "in archive recovery",
+        "controldata_timeline": "1",
+        "last_wal_replay_lsn": "0/3003600",
+        "log_line": "recovery stopping at restore point \"rp_early\"",
+        "log_path": "/workspace/pitrdrill-work/restores/F-wait-released/restore.log",
+        "pg_is_in_recovery": "true",
+        "recovery_pause": "confirmed-by-log"
+      },
+      "verification": {}
+    },
+    "F-wait-timeout": {
+      "archive_set": "set-waiting",
+      "backup": "b1-early",
+      "commands": [
+        {
+          "port": 55433,
+          "restore_command": "/workspace/pitrdrill-work/restores/F-wait-timeout/pitrdrill-restore-gated.sh",
+          "step": "prepare_restore_dir",
+          "ts": "2026-11-13T14:04:56+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/F-wait-timeout/data",
+            "-l",
+            "/workspace/pitrdrill-work/restores/F-wait-timeout/restore.log",
+            "-w",
+            "-t",
+            "30",
+            "start"
+          ],
+          "rc": 0,
+          "stderr_tail": "",
+          "step": "pg_ctl start",
+          "ts": "2026-11-13T14:04:57+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/F-wait-timeout/data",
+            "-m",
+            "fast",
+            "-w",
+            "-t",
+            "60",
+            "stop"
+          ],
+          "rc": 0,
+          "step": "stop",
+          "ts": "2026-11-13T14:05:27+0000"
+        }
+      ],
+      "created_at": "2026-11-13T14:04:55+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/F-wait-timeout/data",
+      "failure_reasons": [
+        "归档尚未到位, 恢复在等待 WAL: 000000010000000000000003(门控/归档迟到)",
+        "ARCHIVE_WAIT_TIMEOUT: 等待缺失 WAL 超过预算 30s, 保留诊断, 未静默恢复到更早位置"
+      ],
+      "gate_file": "/workspace/pitrdrill-work/tmp/set-waiting.gate",
+      "gated": true,
+      "log_path": "/workspace/pitrdrill-work/restores/F-wait-timeout/restore.log",
+      "name": "F-wait-timeout",
+      "phase": "WAITING_ARCHIVE",
+      "pid": 6837,
+      "port": 55433,
+      "preflight": {},
+      "promoted_timeline": null,
+      "result": "WAITING_ARCHIVE",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/F-wait-timeout",
+      "target": "rp_early",
+      "target_evidence": {},
+      "verification": {}
+    },
+    "R1-early": {
+      "archive_set": "set-full",
+      "backup": "b1-early",
+      "commands": [
+        {
+          "port": 55500,
+          "restore_command": "/workspace/pitrdrill-work/restores/R1-early/pitrdrill-restore-fetch.sh",
+          "step": "prepare_restore_dir",
+          "ts": "2026-11-13T14:04:42+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/R1-early/data",
+            "-l",
+            "/workspace/pitrdrill-work/restores/R1-early/restore.log",
+            "-w",
+            "-t",
+            "30",
+            "start"
+          ],
+          "rc": 0,
+          "stderr_tail": "",
+          "step": "pg_ctl start",
+          "ts": "2026-11-13T14:04:43+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/R1-early/data",
+            "-m",
+            "fast",
+            "-w",
+            "-t",
+            "60",
+            "stop"
+          ],
+          "rc": 0,
+          "step": "stop",
+          "ts": "2026-11-13T14:04:45+0000"
+        }
+      ],
+      "created_at": "2026-11-13T14:04:41+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/R1-early/data",
+      "failure_reasons": [],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/R1-early/restore.log",
+      "name": "R1-early",
+      "phase": "TARGET_REACHED",
+      "pid": 6665,
+      "port": 55500,
+      "preflight": {
+        "archive_set": "set-full",
+        "backup": "b1-early",
+        "checked_at": "2026-11-13T14:04:41+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000003",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007"
+            ],
+            "complete": true,
+            "covered_by_backup": [],
+            "missing": [],
+            "present_in_backup_pgwal": [
+              "000000010000000000000002"
+            ],
+            "required": [
+              "000000010000000000000002",
+              "000000010000000000000003"
+            ]
+          },
+          "gap_wait_budget_seconds": 120,
+          "pg_verifybackup": {
+            "output": "backup successfully verified",
+            "rc": 0
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Sequence    len (rec/tot):     99/    99, tx:        750, lsn: 0/03000028, prev 0/02000100, desc: LOG rel 1663/16384/16395, blkref #0: rel 1663/16384/1639",
+                "file": "000000010000000000000003",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              }
+            ],
+            "problems": []
+          },
+          "system_identifier": {
+            "backup": "7707656682046675350",
+            "match": true,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [],
+            "required": 1
+          }
+        },
+        "hard_errors": [],
+        "passed": true,
+        "problems": [],
+        "target": "rp_early"
+      },
+      "promoted_timeline": null,
+      "result": "TARGET_REACHED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/R1-early",
+      "target": "rp_early",
+      "target_evidence": {
+        "controldata_state": "in archive recovery",
+        "controldata_timeline": "1",
+        "last_wal_replay_lsn": "0/3003600",
+        "log_line": "recovery stopping at restore point \"rp_early\"",
+        "log_path": "/workspace/pitrdrill-work/restores/R1-early/restore.log",
+        "pg_is_in_recovery": "true",
+        "recovery_pause": "confirmed-by-log"
+      },
+      "verification": {
+        "all_passed": true,
+        "checks": [
+          {
+            "check": "实例可连接且身份为 pitrdrill 隔离实例",
+            "detail": "pg_is_in_recovery=true, timeline=1",
+            "passed": true
+          },
+          {
+            "check": "仍处于恢复暂停态(未自动提升)",
+            "detail": "pg_is_in_recovery=true",
+            "passed": true
+          },
+          {
+            "check": "目标标记存在: MARKER-M1",
+            "detail": "MARKER-M1|0/30013B0|1",
+            "passed": true
+          },
+          {
+            "check": "更晚标记不存在(目标后事务已排除): MARKER-M2",
+            "detail": "count=0",
+            "passed": true
+          },
+          {
+            "check": "更晚标记不存在(目标后事务已排除): MARKER-M3",
+            "detail": "count=0",
+            "passed": true
+          },
+          {
+            "check": "误删除未发生: parent 3 仍存在",
+            "detail": "3|parent-3",
+            "passed": true
+          },
+          {
+            "check": "误删除未发生: parent 7 仍存在",
+            "detail": "7|parent-7",
+            "passed": true
+          },
+          {
+            "check": "误更新未发生: parent 5 未被 MISHAP 污染",
+            "detail": "payload=tick-4",
+            "passed": true
+          },
+          {
+            "check": "目标后正常新增已排除: parent 9001 不存在",
+            "detail": "count=0",
+            "passed": true
+          },
+          {
+            "check": "误操作事件日志不存在",
+            "detail": "mishap count=0",
+            "passed": true
+          },
+          {
+            "check": "父子外键约束定义存在",
+            "detail": "pitrdrill_child_parent_id_fkey|pitrdrill_parent",
+            "passed": true
+          },
+          {
+            "check": "不存在悬空子记录",
+            "detail": "orphan count=0",
+            "passed": true
+          },
+          {
+            "check": "只读暂停态跳过违规插入探针(提升后 R2 执行真实约束拒绝)",
+            "detail": "符合只读恢复语义",
+            "passed": true
+          },
+          {
+            "check": "序列对象在恢复态完好可读",
+            "detail": "sequences found=2, last_value=33",
+            "passed": true
+          },
+          {
+            "check": "只读暂停态跳过写入探针(提升后 R2 执行真实插入)",
+            "detail": "符合 recovery_target_action=pause 的只读语义",
+            "passed": true
+          },
+          {
+            "check": "重放 LSN 不越过目标 restore point(容差一个 WAL 段)",
+            "detail": "replay=0/3003600 target=0/3003600",
+            "passed": true
+          }
+        ],
+        "failed": 0,
+        "passed": 16,
+        "restore": "R1-early",
+        "timeline": 1,
+        "total": 16
+      }
+    },
+    "R2-late": {
+      "archive_set": "set-full",
+      "backup": "b2-mid",
+      "commands": [
+        {
+          "port": 55500,
+          "restore_command": "/workspace/pitrdrill-work/restores/R2-late/pitrdrill-restore-fetch.sh",
+          "step": "prepare_restore_dir",
+          "ts": "2026-11-13T14:04:46+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/R2-late/data",
+            "-l",
+            "/workspace/pitrdrill-work/restores/R2-late/restore.log",
+            "-w",
+            "-t",
+            "30",
+            "start"
+          ],
+          "rc": 0,
+          "stderr_tail": "",
+          "step": "pg_ctl start",
+          "ts": "2026-11-13T14:04:47+0000"
+        },
+        {
+          "argv": [
+            "/usr/lib/postgresql/16/bin/pg_ctl",
+            "-D",
+            "/workspace/pitrdrill-work/restores/R2-late/data",
+            "-w",
+            "-t",
+            "60",
+            "promote"
+          ],
+          "rc": 0,
+          "stderr_tail": "",
+          "step": "promote",
+          "ts": "2026-11-13T14:04:48+0000"
+        }
+      ],
+      "created_at": "2026-11-13T14:04:45+0000",
+      "data_dir": "/workspace/pitrdrill-work/restores/R2-late/data",
+      "failure_reasons": [],
+      "gate_file": "",
+      "gated": false,
+      "log_path": "/workspace/pitrdrill-work/restores/R2-late/restore.log",
+      "name": "R2-late",
+      "phase": "PROMOTED",
+      "pid": 6740,
+      "port": 55500,
+      "preflight": {
+        "archive_set": "set-full",
+        "backup": "b2-mid",
+        "checked_at": "2026-11-13T14:04:45+0000",
+        "checks": {
+          "gap": {
+            "available_in_set": [
+              "000000010000000000000001",
+              "000000010000000000000002",
+              "000000010000000000000003",
+              "000000010000000000000004",
+              "000000010000000000000005",
+              "000000010000000000000006",
+              "000000010000000000000007"
+            ],
+            "complete": true,
+            "covered_by_backup": [],
+            "missing": [],
+            "present_in_backup_pgwal": [
+              "000000010000000000000005"
+            ],
+            "required": [
+              "000000010000000000000005",
+              "000000010000000000000006"
+            ]
+          },
+          "gap_wait_budget_seconds": 120,
+          "pg_verifybackup": {
+            "output": "backup successfully verified",
+            "rc": 0
+          },
+          "segment_integrity": {
+            "details": [
+              {
+                "evidence": "rmgr: XLOG        len (rec/tot):    114/   114, tx:          0, lsn: 0/01000028, prev 0/00000000, desc: CHECKPOINT_SHUTDOWN redo 0/1000028; tli 1; prev tli 1; f",
+                "file": "000000010000000000000001",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/02000028, prev 0/0194CA98, desc: RUNNING_XACTS nextXid 750 latestCompletedXid 749 oldestR",
+                "file": "000000010000000000000002",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Sequence    len (rec/tot):     99/    99, tx:        750, lsn: 0/03000028, prev 0/02000100, desc: LOG rel 1663/16384/16395, blkref #0: rel 1663/16384/1639",
+                "file": "000000010000000000000003",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        763, lsn: 0/04000028, prev 0/03003600, desc: INSERT off: 13, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000004",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Standby     len (rec/tot):     50/    50, tx:          0, lsn: 0/05000028, prev 0/04000B08, desc: RUNNING_XACTS nextXid 775 latestCompletedXid 774 oldestR",
+                "file": "000000010000000000000005",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):     65/  2309, tx:        775, lsn: 0/06000028, prev 0/05000100, desc: HOT_UPDATE old_xmax: 775, old_off: 21, old_infobits: [],",
+                "file": "000000010000000000000006",
+                "ok": true
+              },
+              {
+                "evidence": "rmgr: Heap        len (rec/tot):    103/   103, tx:        789, lsn: 0/07000028, prev 0/06002540, desc: INSERT off: 25, flags: 0x00, blkref #0: rel 1663/16384/1",
+                "file": "000000010000000000000007",
+                "ok": true
+              }
+            ],
+            "problems": []
+          },
+          "system_identifier": {
+            "backup": "7707656682046675350",
+            "match": true,
+            "source": "7707656682046675350"
+          },
+          "timeline": {
+            "problems": [],
+            "required": 1
+          }
+        },
+        "hard_errors": [],
+        "passed": true,
+        "problems": [],
+        "target": "rp_late"
+      },
+      "promoted_timeline": 2,
+      "result": "PROMOTED",
+      "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/restore/R2-late",
+      "target": "rp_late",
+      "target_evidence": {
+        "controldata_state": "in archive recovery",
+        "controldata_timeline": "1",
+        "last_wal_replay_lsn": "0/6002540",
+        "log_line": "recovery stopping at restore point \"rp_late\"",
+        "log_path": "/workspace/pitrdrill-work/restores/R2-late/restore.log",
+        "pg_is_in_recovery": "true",
+        "promoted": {
+          "current_wal": "000000020000000000000006",
+          "history_files": [
+            "00000002.history"
+          ],
+          "log": "04:46.954 GMT [6740] LOG:  listening on IPv4 address \"127.0.0.1\", port 55500\n2026-11-13 14:04:46.955 GMT [6740] LOG:  listening on Unix socket \"/tmp/pitrdrill-sockets/pitrdrill-work/restore/R2-late/.s.PGSQL.55500\"\n2026-11-13 14:04:46.959 GMT [6743] LOG:  database system was interrupted; last known up at 2026-11-13 14:04:29 GMT\n2026-11-13 14:04:47.227 GMT [6743] LOG:  starting point-in-time recovery to \"rp_late\"\n2026-11-13 14:04:47.227 GMT [6743] LOG:  starting backup recovery with redo LSN 0/5000028, checkpoint LSN 0/5000060, on timeline ID 1\n[pitrdrill-restore-fetch] request=000000010000000000000005 dest=pg_wal/RECOVERYXLOG\n[pitrdrill-restore-fetch] HIT 000000010000000000000005\n2026-11-13 14:04:47.236 GMT [6743] LOG:  restored log file \"000000010000000000000005\" from archive\n2026-11-13 14:04:47.241 GMT [6743] LOG:  redo starts at 0/5000028\n[pitrdrill-restore-fetch] request=000000010000000000000006 dest=pg_wal/RECOVERYXLOG\n[pitrdrill-restore-fetch] HIT 000000010000000000000006\n2026-11-13 14:04:47.250 GMT [6743] LOG:  restored log file \"000000010000000000000006\" from archive\n2026-11-13 14:04:47.251 GMT [6743] LOG:  completed backup recovery with redo LSN 0/5000028 and end LSN 0/5000100\n2026-11-13 14:04:47.251 GMT [6743] LOG:  consistent recovery state reached at 0/5000100\n2026-11-13 14:04:47.252 GMT [6740] LOG:  database system is ready to accept read-only connections\n[pitrdrill-restore-fetch] request=000000010000000000000007 dest=pg_wal/RECOVERYXLOG\n[pitrdrill-restore-fetch] HIT 000000010000000000000007\n2026-11-13 14:04:47.261 GMT [6743] LOG:  restored log file \"000000010000000000000007\" from archive\n2026-11-13 14:04:47.264 GMT [6743] LOG:  recovery stopping at restore point \"rp_late\", time 2026-11-13 14:04:31.298049+00\n2026-11-13 14:04:47.264 GMT [6743] LOG:  pausing at the end of recovery\n2026-11-13 14:04:47.264 GMT [6743] HINT:  Execute pg_wal_replay_resume() to promote.\n2026-11-13 14:04:48.268 GMT [6743] LOG:  received promote request\n2026-11-13 14:04:48.269 GMT [6743] LOG:  redo done at 0/60024D8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 1.02 s\n2026-11-13 14:04:48.269 GMT [6743] LOG:  last completed transaction was at log time 2026-11-13 14:04:31.291149+00\n[pitrdrill-restore-fetch] request=000000010000000000000006 dest=pg_wal/RECOVERYXLOG\n[pitrdrill-restore-fetch] HIT 000000010000000000000006\n2026-11-13 14:04:48.284 GMT [6743] LOG:  restored log file \"000000010000000000000006\" from archive\n[pitrdrill-restore-fetch] request=00000002.history dest=pg_wal/RECOVERYHISTORY\n[pitrdrill-restore-fetch] MISS 00000002.history\n2026-11-13 14:04:48.291 GMT [6743] LOG:  selected new timeline ID: 2\n[pitrdrill-restore-fetch] request=00000001.history dest=pg_wal/RECOVERYHISTORY\n[pitrdrill-restore-fetch] MISS 00000001.history\n2026-11-13 14:04:48.423 GMT [6743] LOG:  archive recovery complete\n2026-11-13 14:04:48.425 GMT [6741] LOG:  checkpoint starting: force\n2026-11-13 14:04:48.427 GMT [6740] LOG:  database system is ready to accept connections\n",
+          "log_selected_timeline": 2,
+          "pg_is_in_recovery": "false",
+          "timeline": 2
+        },
+        "recovery_pause": "confirmed-by-log"
+      },
+      "verification": {
+        "all_passed": true,
+        "checks": [
+          {
+            "check": "实例可连接且身份为 pitrdrill 隔离实例",
+            "detail": "pg_is_in_recovery=false, timeline=2",
+            "passed": true
+          },
+          {
+            "check": "已提升为独立主库(新时间线)",
+            "detail": "pg_is_in_recovery=false, timeline=2, 提升记录时间线=2",
+            "passed": true
+          },
+          {
+            "check": "提升产生可区分的新时间线(>源时间线 1)且生成 history 文件",
+            "detail": "new timeline=2, history=['00000002.history']",
+            "passed": true
+          },
+          {
+            "check": "目标标记存在: MARKER-M1",
+            "detail": "MARKER-M1|0/30013B0|1",
+            "passed": true
+          },
+          {
+            "check": "目标标记存在: MARKER-M2",
+            "detail": "MARKER-M2|0/60021A8|3",
+            "passed": true
+          },
+          {
+            "check": "更晚标记不存在(目标后事务已排除): MARKER-M3",
+            "detail": "count=0",
+            "passed": true
+          },
+          {
+            "check": "误删除未发生: parent 3 仍存在",
+            "detail": "3|parent-3",
+            "passed": true
+          },
+          {
+            "check": "误删除未发生: parent 7 仍存在",
+            "detail": "7|parent-7",
+            "passed": true
+          },
+          {
+            "check": "误更新未发生: parent 5 未被 MISHAP 污染",
+            "detail": "payload=tick-24",
+            "passed": true
+          },
+          {
+            "check": "目标后正常新增已排除: parent 9001 不存在",
+            "detail": "count=0",
+            "passed": true
+          },
+          {
+            "check": "误操作事件日志不存在",
+            "detail": "mishap count=0",
+            "passed": true
+          },
+          {
+            "check": "父子外键约束定义存在",
+            "detail": "pitrdrill_child_parent_id_fkey|pitrdrill_parent",
+            "passed": true
+          },
+          {
+            "check": "不存在悬空子记录",
+            "detail": "orphan count=0",
+            "passed": true
+          },
+          {
+            "check": "只读暂停态跳过违规插入探针(提升后 R2 执行真实约束拒绝)",
+            "detail": "符合只读恢复语义",
+            "passed": true
+          },
+          {
+            "check": "序列对象在恢复态完好可读",
+            "detail": "sequences found=2, last_value=34",
+            "passed": true
+          },
+          {
+            "check": "只读暂停态跳过写入探针(提升后 R2 执行真实插入)",
+            "detail": "符合 recovery_target_action=pause 的只读语义",
+            "passed": true
+          },
+          {
+            "check": "重放 LSN 不越过目标 restore point(容差一个 WAL 段)",
+            "detail": "replay=0/6002540 target=0/6002540",
+            "passed": true
+          }
+        ],
+        "failed": 0,
+        "passed": 17,
+        "restore": "R2-late",
+        "timeline": 2,
+        "total": 17
+      }
+    }
+  },
+  "source": {
+    "archive_dir": "/workspace/pitrdrill-work/archive/wal",
+    "archive_wrapper": "/workspace/pitrdrill-work/bin/pitrdrill-archive-push.sh",
+    "created_at": "2026-11-13T14:04:27+0000",
+    "data_dir": "/workspace/pitrdrill-work/source/data",
+    "log_path": "/workspace/pitrdrill-work/source/source.log",
+    "pid": 6558,
+    "port": 55432,
+    "socket_dir": "/tmp/pitrdrill-sockets/pitrdrill-work/source",
+    "system_identifier": "7707656682046675350",
+    "wal_seg_size_bytes": 16777216
+  },
+  "task_tag": "pitrdrill"
+}

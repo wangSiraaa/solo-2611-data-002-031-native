@@ -1,0 +1,7 @@
+task=pitrdrill
+kind=restore
+name=R2-late
+created_at=2026-11-13T14:04:46+0000
+backup=b2-mid
+target=rp_late
+archive_set=set-full
