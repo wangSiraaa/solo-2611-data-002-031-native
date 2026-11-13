@@ -1,0 +1,51 @@
+[
+  {
+    "scenario": "base",
+    "eligible_for_causal_inference": true,
+    "blocking_error_codes": [],
+    "warning_codes": [
+      "EXPOSED_INCONSISTENT"
+    ],
+    "result_file": "results/base.json",
+    "overall_effect_cents": -637.5,
+    "interval_integer_cents": [
+      -2033,
+      771
+    ]
+  },
+  {
+    "scenario": "case_cross_arm",
+    "eligible_for_causal_inference": false,
+    "blocking_error_codes": [
+      "ASSIGNMENT_CROSS_ARM",
+      "SLOT_VIOLATION"
+    ],
+    "warning_codes": [
+      "EXPOSED_INCONSISTENT"
+    ],
+    "result_file": "results/case_cross_arm.json"
+  },
+  {
+    "scenario": "case_incomplete_coverage",
+    "eligible_for_causal_inference": false,
+    "blocking_error_codes": [
+      "COVERAGE_INCOMPLETE"
+    ],
+    "warning_codes": [
+      "EXPOSED_INCONSISTENT"
+    ],
+    "result_file": "results/case_incomplete_coverage.json"
+  },
+  {
+    "scenario": "case_ambiguous_members",
+    "eligible_for_causal_inference": false,
+    "blocking_error_codes": [
+      "EVENT_AMBIGUOUS_PERSON",
+      "MEMBER_MULTI_HOUSEHOLD"
+    ],
+    "warning_codes": [
+      "EXPOSED_INCONSISTENT"
+    ],
+    "result_file": "results/case_ambiguous_members.json"
+  }
+]
