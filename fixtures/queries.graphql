@@ -1,0 +1,8 @@
+query AliasedOrders {
+  customers(ids: ["1", "2", "3", "4", "1"]) {
+    id
+    recent: orders(first: 1) { id amount }
+    history: orders(first: 2) { id createdAt }
+    repeated: orders(first: 1) { id }
+  }
+}

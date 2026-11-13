@@ -1,0 +1,3 @@
+type Query { customers(ids: [ID!]!): [Customer!]! }
+type Customer { id: ID!, name: String!, orders(first: Int!): [Order!]! }
+type Order { id: ID!, createdAt: String!, amount: String! }
