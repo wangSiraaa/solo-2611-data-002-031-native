@@ -9,5 +9,6 @@ venv/
 .pytest_cache/
 .coverage
 htmlcov/
+outputs/
 .DS_Store
 *.log
