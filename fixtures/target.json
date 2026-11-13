@@ -1,0 +1,7 @@
+{
+  "table": "partition_input.events",
+  "month": "2026-01",
+  "timezone": "UTC",
+  "new_partition": "partition_input.events_jan",
+  "lock_timeout_ms": 500
+}
