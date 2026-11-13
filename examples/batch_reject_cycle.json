@@ -1,0 +1,8 @@
+{
+  "comment": "最终成环：加入 7->3 后形成 3->...->7->3，应整批拒绝并给出可核验环路径；其中重复 add 1->2 是 no-op",
+  "operation_id": "op-must-reject",
+  "operations": [
+    {"seq": 1, "op": "add", "prerequisite": 7, "dependent": 3},
+    {"seq": 2, "op": "add", "prerequisite": 1, "dependent": 2}
+  ]
+}

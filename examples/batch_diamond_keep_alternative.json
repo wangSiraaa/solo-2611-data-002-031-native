@@ -1,0 +1,7 @@
+{
+  "comment": "菱形替代路径演示：初始小图有 3->4->6 与 3->5->6 两条路径；删除 3->5 后，(3,6) 等经 3->4->6 仍可达，对应可达对保留，仅失去经 5 的关系",
+  "operation_id": "op-diamond-keep-alt",
+  "operations": [
+    {"seq": 1, "op": "remove", "prerequisite": 3, "dependent": 5}
+  ]
+}

@@ -1,0 +1,2 @@
+# 运行期只需要一个驱动；psycopg 3（含二进制 libpq 绑定）
+psycopg[binary]>=3.1,<4

@@ -1,0 +1,7 @@
+{
+  "comment": "故意与 op-reverse-chain 复用同一 operation_id 但内容不同，应返回幂等冲突而不是提交",
+  "operation_id": "op-reverse-chain",
+  "operations": [
+    {"seq": 1, "op": "remove", "prerequisite": 6, "dependent": 7}
+  ]
+}

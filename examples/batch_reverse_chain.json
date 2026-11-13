@@ -1,0 +1,10 @@
+{
+  "comment": "合法整批反转链 1->2->3 为 3->2->1：seq 1/2 先加反向边，此时存在临时环；seq 3/4 再删正向边，最终直接图仍是 DAG",
+  "operation_id": "op-reverse-chain",
+  "operations": [
+    {"seq": 1, "op": "add",    "prerequisite": 2, "dependent": 1},
+    {"seq": 2, "op": "add",    "prerequisite": 3, "dependent": 2},
+    {"seq": 3, "op": "remove", "prerequisite": 1, "dependent": 2},
+    {"seq": 4, "op": "remove", "prerequisite": 2, "dependent": 3}
+  ]
+}

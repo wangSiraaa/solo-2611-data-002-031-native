@@ -1,0 +1,8 @@
+{
+  "comment": "未知节点与自环均应整批拒绝",
+  "operation_id": "op-bad-input",
+  "operations": [
+    {"seq": 1, "op": "add", "prerequisite": 2, "dependent": 2},
+    {"seq": 2, "op": "add", "prerequisite": 1, "dependent": 99}
+  ]
+}

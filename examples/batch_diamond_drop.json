@@ -1,0 +1,7 @@
+{
+  "comment": "菱形中删除 3->4，但 3->5->6 与 4->6 仍在；(3,6) 等可达对不得消失",
+  "operation_id": "op-diamond-drop-one",
+  "operations": [
+    {"seq": 1, "op": "remove", "prerequisite": 3, "dependent": 4}
+  ]
+}
