@@ -1,0 +1,384 @@
+{
+ "combo_id": "k12",
+ "candidates": [
+  "orders(customer_id, order_date) INCLUDE(order_id, status, total)",
+  "orders(order_date)"
+ ],
+ "indexes": [
+  {
+   "name": "ixl_ix_k12_0",
+   "def": "orders(customer_id, order_date) INCLUDE(order_id, status, total)",
+   "build_s": 0.285,
+   "size_bytes": 14721024
+  },
+  {
+   "name": "ixl_ix_k12_1",
+   "def": "orders(order_date)",
+   "build_s": 0.096,
+   "size_bytes": 2179072
+  }
+ ],
+ "status": "done",
+ "error": null,
+ "correct": true,
+ "space_mb": 16.9,
+ "write_ratio": 1.2936,
+ "feasible": false,
+ "violations": [
+  "\u7a7a\u95f4 16.9MB > \u9884\u7b97 16MB",
+  "\u5199\u5165\u500d\u7387 1.2936 > \u9608\u503c 1.2"
+ ],
+ "weighted_geomean": 10.9071,
+ "per_query": {
+  "q1_cust_daterange": [
+   {
+    "group": "hot_narrow",
+    "weight": 5.0,
+    "baseline_median_ms": 6.037,
+    "combo_median_ms": 0.119,
+    "speedup": 50.731,
+    "combo_times_ms": [
+     0.18,
+     0.122,
+     0.119,
+     0.069,
+     0.095
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Only Scan"
+    ]
+   },
+   {
+    "group": "cold_narrow",
+    "weight": 3.0,
+    "baseline_median_ms": 6.13,
+    "combo_median_ms": 0.074,
+    "speedup": 82.838,
+    "combo_times_ms": [
+     0.083,
+     0.103,
+     0.064,
+     0.074,
+     0.049
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Sort",
+     "Gather",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Only Scan"
+    ]
+   },
+   {
+    "group": "hot_wide_old",
+    "weight": 2.0,
+    "baseline_median_ms": 6.406,
+    "combo_median_ms": 0.083,
+    "speedup": 77.181,
+    "combo_times_ms": [
+     0.121,
+     0.083,
+     0.063,
+     0.09,
+     0.057
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Only Scan"
+    ]
+   }
+  ],
+  "q2_product_orders": [
+   {
+    "group": "popular",
+    "weight": 4.0,
+    "baseline_median_ms": 8.918,
+    "combo_median_ms": 9.597,
+    "speedup": 0.929,
+    "combo_times_ms": [
+     8.795,
+     10.481,
+     9.749,
+     8.27,
+     9.597
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   },
+   {
+    "group": "rare",
+    "weight": 2.0,
+    "baseline_median_ms": 8.845,
+    "combo_median_ms": 9.581,
+    "speedup": 0.923,
+    "combo_times_ms": [
+     8.543,
+     10.279,
+     9.581,
+     9.172,
+     10.136
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q3_category_sales": [
+   {
+    "group": "cat_hot",
+    "weight": 3.0,
+    "baseline_median_ms": 28.918,
+    "combo_median_ms": 28.856,
+    "speedup": 1.002,
+    "combo_times_ms": [
+     26.133,
+     28.856,
+     28.855,
+     29.452,
+     31.674
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Hash Join",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Hash Join",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "cat_cold",
+    "weight": 1.0,
+    "baseline_median_ms": 13.671,
+    "combo_median_ms": 14.374,
+    "speedup": 0.951,
+    "combo_times_ms": [
+     12.934,
+     14.374,
+     13.621,
+     14.928,
+     26.974
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Nested Loop",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Nested Loop",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q4_cust_status_fewcols": [
+   {
+    "group": "hot_open",
+    "weight": 4.0,
+    "baseline_median_ms": 6.484,
+    "combo_median_ms": 0.206,
+    "speedup": 31.476,
+    "combo_times_ms": [
+     0.212,
+     0.226,
+     0.18,
+     0.206,
+     0.189
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Only Scan"
+    ]
+   },
+   {
+    "group": "hot_shipped",
+    "weight": 2.0,
+    "baseline_median_ms": 6.174,
+    "combo_median_ms": 0.099,
+    "speedup": 62.364,
+    "combo_times_ms": [
+     0.124,
+     0.176,
+     0.086,
+     0.099,
+     0.073
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Only Scan"
+    ]
+   }
+  ],
+  "q5_status_channel_recent": [
+   {
+    "group": "open_web",
+    "weight": 3.0,
+    "baseline_median_ms": 6.957,
+    "combo_median_ms": 0.346,
+    "speedup": 20.107,
+    "combo_times_ms": [
+     0.336,
+     0.432,
+     0.3,
+     0.362,
+     0.346
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_1"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   },
+   {
+    "group": "returned_app",
+    "weight": 2.0,
+    "baseline_median_ms": 6.149,
+    "combo_median_ms": 2.346,
+    "speedup": 2.621,
+    "combo_times_ms": [
+     2.36,
+     2.593,
+     2.346,
+     2.345,
+     2.175
+    ],
+    "indexes_used": [
+     "ixl_ix_k12_1"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Sort",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   }
+  ]
+ }
+}
