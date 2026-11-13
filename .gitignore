@@ -11,3 +11,7 @@ venv/
 htmlcov/
 .DS_Store
 *.log
+
+# local run artifacts
+products-requests.jsonl
+.runtime/demo.json
