@@ -1,0 +1,270 @@
+{
+ "q1_cust_daterange": {
+  "hot_narrow": {
+   "times_ms": [
+    0.201,
+    0.238,
+    0.157,
+    0.14,
+    0.107
+   ],
+   "hash": "eb84b1ed74a193e5c537e57f41d15c22163c45328d5108e3415506bc2eb24d32",
+   "plan_file": "k09/plans/q1_cust_daterange__hot_narrow.json",
+   "indexes_used": [
+    "ixl_ix_k09_0"
+   ],
+   "node_types": [
+    "Limit",
+    "Incremental Sort",
+    "Index Scan"
+   ],
+   "plan_time_ms": 0.027,
+   "shared_hit": 38,
+   "shared_read": 0
+  },
+  "cold_narrow": {
+   "times_ms": [
+    0.363,
+    0.366,
+    0.334,
+    0.34,
+    0.289
+   ],
+   "hash": "d088cf5d88eea22876b4837234d57267a9f04f977217b8ee370004b064a82494",
+   "plan_file": "k09/plans/q1_cust_daterange__cold_narrow.json",
+   "indexes_used": [
+    "ixl_ix_k09_0"
+   ],
+   "node_types": [
+    "Limit",
+    "Incremental Sort",
+    "Index Scan"
+   ],
+   "plan_time_ms": 0.255,
+   "shared_hit": 80,
+   "shared_read": 0
+  },
+  "hot_wide_old": {
+   "times_ms": [
+    0.145,
+    0.179,
+    0.091,
+    0.088,
+    0.076
+   ],
+   "hash": "fe04686a516a89884896f6026e1b733d23797573683fa439ad2ec57f712fbb61",
+   "plan_file": "k09/plans/q1_cust_daterange__hot_wide_old.json",
+   "indexes_used": [
+    "ixl_ix_k09_0"
+   ],
+   "node_types": [
+    "Limit",
+    "Incremental Sort",
+    "Index Scan"
+   ],
+   "plan_time_ms": 0.04,
+   "shared_hit": 36,
+   "shared_read": 0
+  }
+ },
+ "q2_product_orders": {
+  "popular": {
+   "times_ms": [
+    8.874,
+    11.217,
+    10.462,
+    8.295,
+    9.126
+   ],
+   "hash": "93bddb7795a83d70a0e163a9bcb6e367915ff67f63b5772e7ace3451669dab19",
+   "plan_file": "k09/plans/q2_product_orders__popular.json",
+   "indexes_used": [
+    "orders_pkey"
+   ],
+   "node_types": [
+    "Limit",
+    "Gather Merge",
+    "Sort",
+    "Nested Loop",
+    "Seq Scan",
+    "Index Scan"
+   ],
+   "plan_time_ms": 7.892,
+   "shared_hit": 5288,
+   "shared_read": 0
+  },
+  "rare": {
+   "times_ms": [
+    9.166,
+    11.225,
+    11.483,
+    7.963,
+    8.532
+   ],
+   "hash": "74207ec436848bcb3e0b17e598c0939c865294ad391fb10c7d1b877f0cc78759",
+   "plan_file": "k09/plans/q2_product_orders__rare.json",
+   "indexes_used": [
+    "orders_pkey"
+   ],
+   "node_types": [
+    "Limit",
+    "Gather Merge",
+    "Sort",
+    "Nested Loop",
+    "Seq Scan",
+    "Index Scan"
+   ],
+   "plan_time_ms": 9.882,
+   "shared_hit": 5308,
+   "shared_read": 0
+  }
+ },
+ "q3_category_sales": {
+  "cat_hot": {
+   "times_ms": [
+    28.765,
+    33.047,
+    30.794,
+    29.489,
+    30.923
+   ],
+   "hash": "4c7028d6a751e62e88554eded81b71e9da630d187a7aad1810fd7517eb41a43a",
+   "plan_file": "k09/plans/q3_category_sales__cat_hot.json",
+   "indexes_used": [],
+   "node_types": [
+    "Aggregate",
+    "Gather",
+    "Aggregate",
+    "Hash Join",
+    "Hash Join",
+    "Seq Scan",
+    "Hash",
+    "Seq Scan",
+    "Hash",
+    "Seq Scan"
+   ],
+   "plan_time_ms": 41.873,
+   "shared_hit": 6487,
+   "shared_read": 0
+  },
+  "cat_cold": {
+   "times_ms": [
+    15.001,
+    16.263,
+    16.347,
+    13.194,
+    27.762
+   ],
+   "hash": "5b8d17bec758bd47050a7b846f18de41bf67718fea9563f183afeffbbfe0fee6",
+   "plan_file": "k09/plans/q3_category_sales__cat_cold.json",
+   "indexes_used": [
+    "orders_pkey"
+   ],
+   "node_types": [
+    "Aggregate",
+    "Gather",
+    "Aggregate",
+    "Nested Loop",
+    "Hash Join",
+    "Seq Scan",
+    "Hash",
+    "Seq Scan",
+    "Index Scan"
+   ],
+   "plan_time_ms": 20.738,
+   "shared_hit": 24471,
+   "shared_read": 0
+  }
+ },
+ "q4_cust_status_fewcols": {
+  "hot_open": {
+   "times_ms": [
+    7.636,
+    7.742,
+    5.708,
+    6.458,
+    6.211
+   ],
+   "hash": "95b2dab5377d7620a014f90314cd03fd804456c3c7c46ff01cd1aaf0374826b7",
+   "plan_file": "k09/plans/q4_cust_status_fewcols__hot_open.json",
+   "indexes_used": [],
+   "node_types": [
+    "Limit",
+    "Gather Merge",
+    "Sort",
+    "Seq Scan"
+   ],
+   "plan_time_ms": 6.453,
+   "shared_hit": 2368,
+   "shared_read": 0
+  },
+  "hot_shipped": {
+   "times_ms": [
+    0.424,
+    0.458,
+    0.282,
+    0.294,
+    0.337
+   ],
+   "hash": "40cbb06ff54c187d41033c811cb23a5128d79fd2e3eded6192d4dec890b18796",
+   "plan_file": "k09/plans/q4_cust_status_fewcols__hot_shipped.json",
+   "indexes_used": [
+    "ixl_ix_k09_0"
+   ],
+   "node_types": [
+    "Limit",
+    "Incremental Sort",
+    "Index Scan"
+   ],
+   "plan_time_ms": 0.219,
+   "shared_hit": 263,
+   "shared_read": 0
+  }
+ },
+ "q5_status_channel_recent": {
+  "open_web": {
+   "times_ms": [
+    0.408,
+    0.369,
+    0.265,
+    0.275,
+    0.325
+   ],
+   "hash": "749ea76821cc3a5df6315bc9b1ffd9dad8c3b765dfd945e59d5b3c932424edff",
+   "plan_file": "k09/plans/q5_status_channel_recent__open_web.json",
+   "indexes_used": [
+    "ixl_ix_k09_0"
+   ],
+   "node_types": [
+    "Limit",
+    "Incremental Sort",
+    "Index Scan"
+   ],
+   "plan_time_ms": 0.296,
+   "shared_hit": 551,
+   "shared_read": 0
+  },
+  "returned_app": {
+   "times_ms": [
+    2.86,
+    2.488,
+    2.253,
+    2.026,
+    2.16
+   ],
+   "hash": "193194217786f3721b7b641d094de947f1fa31c3393bc3639b593519d472eda0",
+   "plan_file": "k09/plans/q5_status_channel_recent__returned_app.json",
+   "indexes_used": [
+    "ixl_ix_k09_0"
+   ],
+   "node_types": [
+    "Limit",
+    "Incremental Sort",
+    "Index Scan"
+   ],
+   "plan_time_ms": 2.616,
+   "shared_hit": 9140,
+   "shared_read": 0
+  }
+ }
+}

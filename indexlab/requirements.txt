@@ -1,0 +1,3 @@
+psycopg[binary]>=3.1
+pglast>=8.0
+PyYAML>=6.0

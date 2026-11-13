@@ -1,0 +1,81 @@
+# 工作负载与实验配置（所有生成均使用固定 seed，可复现）
+experiment:
+  tag: ixl                     # 任务标识：schema 名 / 实验索引名 / 归档目录的统一前缀
+  dbname: idxlabdb
+  seed: 20261113
+  scale:
+    customers: 20000
+    products: 3000
+    orders: 300000
+    hotspot_customers: 15      # 前 15 个 customer_id 为热点客户，约占 25% 订单
+    hotspot_share: 0.25
+    date_start: "2024-01-01"
+    date_end: "2026-10-31"
+  stats:
+    analyze_after_load: true   # 统计信息收集方式：装载后 ANALYZE，每次建索引后 ANALYZE 相关表
+    default_statistics_target: 100
+  measurement:
+    repeats: 5                 # 每个 (查询, 参数组) 的计时重复次数（报告分布而非单次）
+    warmup: 1
+    explain_per_combo: 1       # 每个 (查询, 参数组) 归档一份 EXPLAIN ANALYZE BUFFERS
+    statement_timeout_ms: 120000
+  writebench:
+    n_insert_orders: 1600      # 固定写入操作流：插入订单（每单 1-3 条明细）
+    n_update_orders: 2400      # 固定写入操作流：更新订单状态
+    ops_per_commit: 100
+    repeats: 3                 # 每次从同一初始模板副本全新克隆，独立测量取中位
+  constraints:
+    space_budget_mb: 16        # 新增索引真实占用空间上限（按 pg_relation_size 计）
+    write_slowdown_max: 1.20   # 写入耗时倍率阈值（相对无新增索引基线）
+  explore:
+    max_combos: 16             # 实验次数预算（不含基线）
+    max_indexes_per_combo: 3
+    max_candidates: 20
+    single_phase_quota: 8      # 单索引组合最多试验次数（列序对照候选额外强制纳入）
+
+# 参数组中的符号由数据生成上下文解析（固定 seed 保证解析结果稳定）：
+#   hot1/hot2/hot3  热点客户（构造上订单最多）
+#   cold            冷客户（订单极少）
+#   popular1        热门商品（最热类目中的头部商品）
+#   rare1           冷门商品（最冷类目）
+queries:
+  - id: q1_cust_daterange
+    file: q1_cust_daterange.sql
+    kind: eq_range_sort_limit
+    desc: 等值(客户)+范围(日期)+排序LIMIT
+    param_groups:
+      - {name: hot_narrow, weight: 5, params: ["hot1", "2026-09-01", "2026-11-01"]}
+      - {name: cold_narrow, weight: 3, params: ["cold", "2026-09-01", "2026-11-01"]}
+      - {name: hot_wide_old, weight: 2, params: ["hot2", "2025-01-01", "2025-07-01"]}
+
+  - id: q2_product_orders
+    file: q2_product_orders.sql
+    kind: join_filter_sort_limit
+    desc: 连接(明细-订单)+等值(商品)+排序LIMIT
+    param_groups:
+      - {name: popular, weight: 4, params: ["popular1"]}
+      - {name: rare, weight: 2, params: ["rare1"]}
+
+  - id: q3_category_sales
+    file: q3_category_sales.sql
+    kind: join_agg
+    desc: 三表连接+聚合(类目销量)
+    param_groups:
+      - {name: cat_hot, weight: 3, params: ["electronics", "2026-01-01", "2026-11-01"]}
+      - {name: cat_cold, weight: 1, params: ["office", "2026-01-01", "2026-11-01"]}
+
+  - id: q4_cust_status_fewcols
+    file: q4_cust_status_fewcols.sql
+    kind: eq_eq_fewcols
+    desc: 双等值+少量列(覆盖索引候选)
+    param_groups:
+      - {name: hot_open, weight: 4, params: ["hot1", "open"]}
+      - {name: hot_shipped, weight: 2, params: ["hot3", "shipped"]}
+
+  - id: q5_status_channel_recent
+    file: q5_status_channel_recent.sql
+    kind: eq_eq_sort_limit
+    desc: 双等值+排序LIMIT
+    param_groups:
+      - {name: open_web, weight: 3, params: ["open", "web"]}
+      - {name: returned_app, weight: 2, params: ["returned", "app"]}

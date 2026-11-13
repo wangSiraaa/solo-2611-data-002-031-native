@@ -1,0 +1,256 @@
+{
+ "kept": [
+  {
+   "table": "order_items",
+   "key_cols": [
+    "product_id"
+   ],
+   "include_cols": [],
+   "label": "order_items(product_id)",
+   "sources": [
+    "q2_product_orders:R1",
+    "q3_category_sales:R5"
+   ]
+  },
+  {
+   "table": "order_items",
+   "key_cols": [
+    "product_id"
+   ],
+   "include_cols": [
+    "qty",
+    "unit_price"
+   ],
+   "label": "order_items(product_id) INCLUDE(qty, unit_price)",
+   "sources": [
+    "q2_product_orders:R4"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "customer_id"
+   ],
+   "include_cols": [],
+   "label": "orders(customer_id)",
+   "sources": [
+    "q1_cust_daterange:R1",
+    "q4_cust_status_fewcols:R1"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "customer_id",
+    "order_date"
+   ],
+   "include_cols": [],
+   "label": "orders(customer_id, order_date)",
+   "sources": [
+    "q1_cust_daterange:R2",
+    "q1_cust_daterange:R3"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "customer_id",
+    "order_date"
+   ],
+   "include_cols": [
+    "order_id",
+    "status",
+    "total"
+   ],
+   "label": "orders(customer_id, order_date) INCLUDE(order_id, status, total)",
+   "sources": [
+    "q1_cust_daterange:R4"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "customer_id",
+    "status",
+    "order_date"
+   ],
+   "include_cols": [],
+   "label": "orders(customer_id, status, order_date)",
+   "sources": [
+    "q4_cust_status_fewcols:R3"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "customer_id",
+    "status",
+    "order_date"
+   ],
+   "include_cols": [
+    "order_id"
+   ],
+   "label": "orders(customer_id, status, order_date) INCLUDE(order_id)",
+   "sources": [
+    "q4_cust_status_fewcols:R4"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "order_date"
+   ],
+   "include_cols": [],
+   "label": "orders(order_date)",
+   "sources": [
+    "q1_cust_daterange:R1",
+    "q3_category_sales:R1"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "order_date",
+    "customer_id"
+   ],
+   "include_cols": [],
+   "label": "orders(order_date, customer_id)",
+   "sources": [
+    "q1_cust_daterange:R2b"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "status"
+   ],
+   "include_cols": [],
+   "label": "orders(status)",
+   "sources": [
+    "q4_cust_status_fewcols:R1",
+    "q5_status_channel_recent:R1"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "status",
+    "channel",
+    "order_date"
+   ],
+   "include_cols": [],
+   "label": "orders(status, channel, order_date)",
+   "sources": [
+    "q5_status_channel_recent:R3"
+   ]
+  },
+  {
+   "table": "orders",
+   "key_cols": [
+    "status",
+    "channel",
+    "order_date"
+   ],
+   "include_cols": [
+    "order_id",
+    "customer_id",
+    "total"
+   ],
+   "label": "orders(status, channel, order_date) INCLUDE(order_id, customer_id, total)",
+   "sources": [
+    "q5_status_channel_recent:R4"
+   ]
+  },
+  {
+   "table": "products",
+   "key_cols": [
+    "category"
+   ],
+   "include_cols": [],
+   "label": "products(category)",
+   "sources": [
+    "q3_category_sales:R1"
+   ]
+  }
+ ],
+ "dropped": [
+  {
+   "candidate": "order_items(order_id)",
+   "reason": "\u952e\u4e3a\u5df2\u6709\u7d22\u5f15 order_items_pkey \u7684\u5de6\u524d\u7f00\u4e14 INCLUDE \u88ab\u8986\u76d6\uff08\u5197\u4f59\uff09",
+   "sources": [
+    "q2_product_orders:R5",
+    "q3_category_sales:R5"
+   ]
+  },
+  {
+   "candidate": "orders(channel)",
+   "reason": "\u4e0e\u5df2\u6709\u7d22\u5f15 orders_channel_idx \u5b9a\u4e49\u7b49\u4ef7",
+   "sources": [
+    "q5_status_channel_recent:R1"
+   ]
+  },
+  {
+   "candidate": "orders(order_id)",
+   "reason": "\u4e0e\u5df2\u6709\u7d22\u5f15 orders_pkey \u5b9a\u4e49\u7b49\u4ef7",
+   "sources": [
+    "q2_product_orders:R5",
+    "q3_category_sales:R5"
+   ]
+  },
+  {
+   "candidate": "products(product_id)",
+   "reason": "\u4e0e\u5df2\u6709\u7d22\u5f15 products_pkey \u5b9a\u4e49\u7b49\u4ef7",
+   "sources": [
+    "q3_category_sales:R5"
+   ]
+  }
+ ],
+ "existing_indexes": [
+  {
+   "name": "customers_pkey",
+   "table": "customers",
+   "key": [
+    "customer_id"
+   ],
+   "include": [],
+   "primary": true
+  },
+  {
+   "name": "products_pkey",
+   "table": "products",
+   "key": [
+    "product_id"
+   ],
+   "include": [],
+   "primary": true
+  },
+  {
+   "name": "orders_pkey",
+   "table": "orders",
+   "key": [
+    "order_id"
+   ],
+   "include": [],
+   "primary": true
+  },
+  {
+   "name": "order_items_pkey",
+   "table": "order_items",
+   "key": [
+    "order_id",
+    "product_id"
+   ],
+   "include": [],
+   "primary": true
+  },
+  {
+   "name": "orders_channel_idx",
+   "table": "orders",
+   "key": [
+    "channel"
+   ],
+   "include": [],
+   "primary": false
+  }
+ ]
+}

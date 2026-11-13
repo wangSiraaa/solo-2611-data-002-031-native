@@ -1,0 +1,16 @@
+{
+ "status": "ok",
+ "times_s": [
+  0.5185,
+  0.4279,
+  0.4193
+ ],
+ "tables_cloned": [
+  "orders",
+  "order_items"
+ ],
+ "candidate_indexed_tables": [
+  "order_items"
+ ],
+ "ops": 4000
+}

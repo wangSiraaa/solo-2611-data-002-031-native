@@ -1,0 +1,117 @@
+{
+ "Plan": {
+  "Node Type": "Limit",
+  "Parallel Aware": false,
+  "Async Capable": false,
+  "Startup Cost": 24.35,
+  "Total Cost": 396.19,
+  "Plan Rows": 20,
+  "Plan Width": 22,
+  "Actual Startup Time": 0.139,
+  "Actual Total Time": 0.14,
+  "Actual Rows": 20,
+  "Actual Loops": 1,
+  "Shared Hit Blocks": 999,
+  "Shared Read Blocks": 0,
+  "Shared Dirtied Blocks": 0,
+  "Shared Written Blocks": 0,
+  "Local Hit Blocks": 0,
+  "Local Read Blocks": 0,
+  "Local Dirtied Blocks": 0,
+  "Local Written Blocks": 0,
+  "Temp Read Blocks": 0,
+  "Temp Written Blocks": 0,
+  "Plans": [
+   {
+    "Node Type": "Incremental Sort",
+    "Parent Relationship": "Outer",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 24.35,
+    "Total Cost": 10064.12,
+    "Plan Rows": 540,
+    "Plan Width": 22,
+    "Actual Startup Time": 0.139,
+    "Actual Total Time": 0.139,
+    "Actual Rows": 20,
+    "Actual Loops": 1,
+    "Sort Key": [
+     "order_date DESC",
+     "order_id DESC"
+    ],
+    "Presorted Key": [
+     "order_date"
+    ],
+    "Full-sort Groups": {
+     "Group Count": 1,
+     "Sort Methods Used": [
+      "quicksort"
+     ],
+     "Sort Space Memory": {
+      "Average Sort Space Used": 26,
+      "Peak Sort Space Used": 26
+     }
+    },
+    "Shared Hit Blocks": 999,
+    "Shared Read Blocks": 0,
+    "Shared Dirtied Blocks": 0,
+    "Shared Written Blocks": 0,
+    "Local Hit Blocks": 0,
+    "Local Read Blocks": 0,
+    "Local Dirtied Blocks": 0,
+    "Local Written Blocks": 0,
+    "Temp Read Blocks": 0,
+    "Temp Written Blocks": 0,
+    "Plans": [
+     {
+      "Node Type": "Index Scan",
+      "Parent Relationship": "Outer",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Scan Direction": "Backward",
+      "Index Name": "ixl_ix_k03_0",
+      "Relation Name": "orders",
+      "Alias": "o",
+      "Startup Cost": 0.42,
+      "Total Cost": 10044.02,
+      "Plan Rows": 540,
+      "Plan Width": 22,
+      "Actual Startup Time": 0.004,
+      "Actual Total Time": 0.134,
+      "Actual Rows": 29,
+      "Actual Loops": 1,
+      "Index Cond": "((order_date >= '2026-09-01'::date) AND (order_date < '2026-11-01'::date))",
+      "Rows Removed by Index Recheck": 0,
+      "Filter": "(customer_id = '1'::smallint)",
+      "Rows Removed by Filter": 1060,
+      "Shared Hit Blocks": 999,
+      "Shared Read Blocks": 0,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+     }
+    ]
+   }
+  ]
+ },
+ "Planning": {
+  "Shared Hit Blocks": 4,
+  "Shared Read Blocks": 0,
+  "Shared Dirtied Blocks": 0,
+  "Shared Written Blocks": 0,
+  "Local Hit Blocks": 0,
+  "Local Read Blocks": 0,
+  "Local Dirtied Blocks": 0,
+  "Local Written Blocks": 0,
+  "Temp Read Blocks": 0,
+  "Temp Written Blocks": 0
+ },
+ "Planning Time": 0.021,
+ "Triggers": [],
+ "Execution Time": 0.143
+}

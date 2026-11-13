@@ -1,0 +1,125 @@
+{
+ "Plan": {
+  "Node Type": "Limit",
+  "Parallel Aware": false,
+  "Async Capable": false,
+  "Startup Cost": 16.53,
+  "Total Cost": 52.56,
+  "Plan Rows": 10,
+  "Plan Width": 19,
+  "Actual Startup Time": 0.409,
+  "Actual Total Time": 0.41,
+  "Actual Rows": 10,
+  "Actual Loops": 1,
+  "Shared Hit Blocks": 495,
+  "Shared Read Blocks": 0,
+  "Shared Dirtied Blocks": 0,
+  "Shared Written Blocks": 0,
+  "Local Hit Blocks": 0,
+  "Local Read Blocks": 0,
+  "Local Dirtied Blocks": 0,
+  "Local Written Blocks": 0,
+  "Temp Read Blocks": 0,
+  "Temp Written Blocks": 0,
+  "Plans": [
+   {
+    "Node Type": "Incremental Sort",
+    "Parent Relationship": "Outer",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 16.53,
+    "Total Cost": 16406.43,
+    "Plan Rows": 4549,
+    "Plan Width": 19,
+    "Actual Startup Time": 0.409,
+    "Actual Total Time": 0.409,
+    "Actual Rows": 10,
+    "Actual Loops": 1,
+    "Sort Key": [
+     "order_date DESC",
+     "order_id DESC"
+    ],
+    "Presorted Key": [
+     "order_date"
+    ],
+    "Full-sort Groups": {
+     "Group Count": 1,
+     "Sort Methods Used": [
+      "top-N heapsort"
+     ],
+     "Sort Space Memory": {
+      "Average Sort Space Used": 26,
+      "Peak Sort Space Used": 26
+     }
+    },
+    "Pre-sorted Groups": {
+     "Group Count": 1,
+     "Sort Methods Used": [
+      "top-N heapsort"
+     ],
+     "Sort Space Memory": {
+      "Average Sort Space Used": 25,
+      "Peak Sort Space Used": 25
+     }
+    },
+    "Shared Hit Blocks": 495,
+    "Shared Read Blocks": 0,
+    "Shared Dirtied Blocks": 0,
+    "Shared Written Blocks": 0,
+    "Local Hit Blocks": 0,
+    "Local Read Blocks": 0,
+    "Local Dirtied Blocks": 0,
+    "Local Written Blocks": 0,
+    "Temp Read Blocks": 0,
+    "Temp Written Blocks": 0,
+    "Plans": [
+     {
+      "Node Type": "Index Scan",
+      "Parent Relationship": "Outer",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Scan Direction": "Backward",
+      "Index Name": "ixl_ix_k14_1",
+      "Relation Name": "orders",
+      "Alias": "o",
+      "Startup Cost": 0.42,
+      "Total Cost": 16280.04,
+      "Plan Rows": 4549,
+      "Plan Width": 19,
+      "Actual Startup Time": 0.01,
+      "Actual Total Time": 0.393,
+      "Actual Rows": 167,
+      "Actual Loops": 1,
+      "Filter": "((status = 'open'::text) AND (channel = 'web'::text))",
+      "Rows Removed by Filter": 379,
+      "Shared Hit Blocks": 495,
+      "Shared Read Blocks": 0,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+     }
+    ]
+   }
+  ]
+ },
+ "Planning": {
+  "Shared Hit Blocks": 0,
+  "Shared Read Blocks": 0,
+  "Shared Dirtied Blocks": 0,
+  "Shared Written Blocks": 0,
+  "Local Hit Blocks": 0,
+  "Local Read Blocks": 0,
+  "Local Dirtied Blocks": 0,
+  "Local Written Blocks": 0,
+  "Temp Read Blocks": 0,
+  "Temp Written Blocks": 0
+ },
+ "Planning Time": 0.047,
+ "Triggers": [],
+ "Execution Time": 0.417
+}

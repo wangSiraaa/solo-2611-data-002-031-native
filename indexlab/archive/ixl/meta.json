@@ -1,0 +1,49 @@
+{
+ "version": "PostgreSQL 16.16 (Debian 16.16-1.pgdg12+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+ "settings": {
+  "shared_buffers": "16384",
+  "work_mem": "4096",
+  "max_parallel_workers_per_gather": "2",
+  "random_page_cost": "4",
+  "effective_cache_size": "524288",
+  "default_statistics_target": "100",
+  "jit": "on"
+ },
+ "seed": 20261113,
+ "counts": {
+  "customers": 20000,
+  "products": 3000,
+  "orders": 300000,
+  "order_items": 617267
+ },
+ "stats": {
+  "method": "\u88c5\u8f7d\u540e ANALYZE\uff1b\u6bcf\u6b21\u5efa\u5b9e\u9a8c\u7d22\u5f15\u540e ANALYZE \u76f8\u5173\u8868",
+  "default_statistics_target": 100
+ },
+ "fingerprints": {
+  "customers": {
+   "rows": 20000,
+   "hash": 1608580215553320884
+  },
+  "products": {
+   "rows": 3000,
+   "hash": 6772911118179428254
+  },
+  "orders": {
+   "rows": 300000,
+   "hash": 8168442791449482746
+  },
+  "order_items": {
+   "rows": 617267,
+   "hash": -991252237240343292
+  }
+ },
+ "param_context": {
+  "hot1": 1,
+  "hot2": 2,
+  "hot3": 3,
+  "cold": 20000,
+  "popular1": 1,
+  "rare1": 3000
+ }
+}

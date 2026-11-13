@@ -1,0 +1,377 @@
+{
+ "combo_id": "k06",
+ "candidates": [
+  "products(category)"
+ ],
+ "indexes": [
+  {
+   "name": "ixl_ix_k06_0",
+   "def": "products(category)",
+   "build_s": 0.002,
+   "size_bytes": 40960
+  }
+ ],
+ "status": "done",
+ "error": null,
+ "correct": true,
+ "space_mb": 0.04,
+ "write_ratio": 1.0,
+ "feasible": true,
+ "violations": [],
+ "weighted_geomean": 0.9079,
+ "per_query": {
+  "q1_cust_daterange": [
+   {
+    "group": "hot_narrow",
+    "weight": 5.0,
+    "baseline_median_ms": 6.037,
+    "combo_median_ms": 6.846,
+    "speedup": 0.882,
+    "combo_times_ms": [
+     6.841,
+     7.032,
+     6.846,
+     7.078,
+     6.344
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "cold_narrow",
+    "weight": 3.0,
+    "baseline_median_ms": 6.13,
+    "combo_median_ms": 6.826,
+    "speedup": 0.898,
+    "combo_times_ms": [
+     7.089,
+     6.359,
+     6.826,
+     6.849,
+     6.261
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Sort",
+     "Gather",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Sort",
+     "Gather",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "hot_wide_old",
+    "weight": 2.0,
+    "baseline_median_ms": 6.406,
+    "combo_median_ms": 7.17,
+    "speedup": 0.893,
+    "combo_times_ms": [
+     7.17,
+     7.354,
+     7.713,
+     6.99,
+     6.722
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ]
+   }
+  ],
+  "q2_product_orders": [
+   {
+    "group": "popular",
+    "weight": 4.0,
+    "baseline_median_ms": 8.918,
+    "combo_median_ms": 10.019,
+    "speedup": 0.89,
+    "combo_times_ms": [
+     9.659,
+     12.501,
+     10.019,
+     10.501,
+     9.364
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   },
+   {
+    "group": "rare",
+    "weight": 2.0,
+    "baseline_median_ms": 8.845,
+    "combo_median_ms": 10.068,
+    "speedup": 0.879,
+    "combo_times_ms": [
+     10.068,
+     10.249,
+     9.835,
+     10.349,
+     8.336
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q3_category_sales": [
+   {
+    "group": "cat_hot",
+    "weight": 3.0,
+    "baseline_median_ms": 28.918,
+    "combo_median_ms": 29.752,
+    "speedup": 0.972,
+    "combo_times_ms": [
+     29.547,
+     30.327,
+     29.752,
+     29.002,
+     31.957
+    ],
+    "indexes_used": [
+     "ixl_ix_k06_0"
+    ],
+    "node_types_base": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Hash Join",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Hash Join",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan",
+     "Hash",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "cat_cold",
+    "weight": 1.0,
+    "baseline_median_ms": 13.671,
+    "combo_median_ms": 14.44,
+    "speedup": 0.947,
+    "combo_times_ms": [
+     14.44,
+     14.936,
+     13.779,
+     13.776,
+     29.117
+    ],
+    "indexes_used": [
+     "ixl_ix_k06_0",
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Nested Loop",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Nested Loop",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q4_cust_status_fewcols": [
+   {
+    "group": "hot_open",
+    "weight": 4.0,
+    "baseline_median_ms": 6.484,
+    "combo_median_ms": 6.89,
+    "speedup": 0.941,
+    "combo_times_ms": [
+     6.606,
+     6.697,
+     6.89,
+     7.125,
+     7.425
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "hot_shipped",
+    "weight": 2.0,
+    "baseline_median_ms": 6.174,
+    "combo_median_ms": 7.634,
+    "speedup": 0.809,
+    "combo_times_ms": [
+     7.634,
+     7.94,
+     7.676,
+     6.213,
+     7.057
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ]
+   }
+  ],
+  "q5_status_channel_recent": [
+   {
+    "group": "open_web",
+    "weight": 3.0,
+    "baseline_median_ms": 6.957,
+    "combo_median_ms": 7.484,
+    "speedup": 0.93,
+    "combo_times_ms": [
+     7.284,
+     7.484,
+     7.75,
+     6.833,
+     7.697
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "returned_app",
+    "weight": 2.0,
+    "baseline_median_ms": 6.149,
+    "combo_median_ms": 6.361,
+    "speedup": 0.967,
+    "combo_times_ms": [
+     6.447,
+     6.812,
+     6.361,
+     6.048,
+     5.936
+    ],
+    "indexes_used": [
+     "orders_channel_idx"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Sort",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Sort",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan"
+    ]
+   }
+  ]
+ },
+ "notes": [
+  "\u7ec4\u5408\u4e0d\u542b\u5199\u8868(orders/order_items)\u4e0a\u7684\u7d22\u5f15\uff0c\u5199\u5165\u8def\u5f84\u4e0e\u57fa\u7ebf\u4e00\u81f4"
+ ]
+}

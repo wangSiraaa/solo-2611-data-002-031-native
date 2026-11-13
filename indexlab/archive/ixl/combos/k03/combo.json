@@ -1,0 +1,374 @@
+{
+ "combo_id": "k03",
+ "candidates": [
+  "orders(order_date)"
+ ],
+ "indexes": [
+  {
+   "name": "ixl_ix_k03_0",
+   "def": "orders(order_date)",
+   "build_s": 0.098,
+   "size_bytes": 2179072
+  }
+ ],
+ "status": "done",
+ "error": null,
+ "correct": true,
+ "space_mb": 2.18,
+ "write_ratio": 1.1137,
+ "feasible": true,
+ "violations": [],
+ "weighted_geomean": 3.8595,
+ "per_query": {
+  "q1_cust_daterange": [
+   {
+    "group": "hot_narrow",
+    "weight": 5.0,
+    "baseline_median_ms": 6.037,
+    "combo_median_ms": 0.215,
+    "speedup": 28.079,
+    "combo_times_ms": [
+     0.23,
+     0.215,
+     0.211,
+     0.215,
+     0.223
+    ],
+    "indexes_used": [
+     "ixl_ix_k03_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   },
+   {
+    "group": "cold_narrow",
+    "weight": 3.0,
+    "baseline_median_ms": 6.13,
+    "combo_median_ms": 2.428,
+    "speedup": 2.525,
+    "combo_times_ms": [
+     2.452,
+     2.428,
+     2.393,
+     2.482,
+     2.402
+    ],
+    "indexes_used": [
+     "ixl_ix_k03_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Sort",
+     "Gather",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Sort",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan"
+    ]
+   },
+   {
+    "group": "hot_wide_old",
+    "weight": 2.0,
+    "baseline_median_ms": 6.406,
+    "combo_median_ms": 0.351,
+    "speedup": 18.251,
+    "combo_times_ms": [
+     0.47,
+     0.34,
+     0.34,
+     0.368,
+     0.351
+    ],
+    "indexes_used": [
+     "ixl_ix_k03_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q2_product_orders": [
+   {
+    "group": "popular",
+    "weight": 4.0,
+    "baseline_median_ms": 8.918,
+    "combo_median_ms": 8.658,
+    "speedup": 1.03,
+    "combo_times_ms": [
+     8.976,
+     8.658,
+     8.093,
+     8.276,
+     8.876
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   },
+   {
+    "group": "rare",
+    "weight": 2.0,
+    "baseline_median_ms": 8.845,
+    "combo_median_ms": 8.991,
+    "speedup": 0.984,
+    "combo_times_ms": [
+     9.059,
+     8.991,
+     8.797,
+     8.988,
+     9.297
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Nested Loop",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q3_category_sales": [
+   {
+    "group": "cat_hot",
+    "weight": 3.0,
+    "baseline_median_ms": 28.918,
+    "combo_median_ms": 26.602,
+    "speedup": 1.087,
+    "combo_times_ms": [
+     27.257,
+     25.895,
+     25.713,
+     26.602,
+     29.041
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Hash Join",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Hash Join",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "cat_cold",
+    "weight": 1.0,
+    "baseline_median_ms": 13.671,
+    "combo_median_ms": 12.764,
+    "speedup": 1.071,
+    "combo_times_ms": [
+     12.968,
+     12.764,
+     12.349,
+     12.336,
+     27.179
+    ],
+    "indexes_used": [
+     "orders_pkey"
+    ],
+    "node_types_base": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Nested Loop",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Index Scan"
+    ],
+    "node_types_combo": [
+     "Aggregate",
+     "Gather",
+     "Aggregate",
+     "Nested Loop",
+     "Hash Join",
+     "Seq Scan",
+     "Hash",
+     "Seq Scan",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q4_cust_status_fewcols": [
+   {
+    "group": "hot_open",
+    "weight": 4.0,
+    "baseline_median_ms": 6.484,
+    "combo_median_ms": 5.906,
+    "speedup": 1.098,
+    "combo_times_ms": [
+     5.907,
+     5.639,
+     5.405,
+     5.906,
+     7.141
+    ],
+    "indexes_used": [],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ]
+   },
+   {
+    "group": "hot_shipped",
+    "weight": 2.0,
+    "baseline_median_ms": 6.174,
+    "combo_median_ms": 2.638,
+    "speedup": 2.34,
+    "combo_times_ms": [
+     2.853,
+     2.351,
+     2.638,
+     2.539,
+     2.71
+    ],
+    "indexes_used": [
+     "ixl_ix_k03_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   }
+  ],
+  "q5_status_channel_recent": [
+   {
+    "group": "open_web",
+    "weight": 3.0,
+    "baseline_median_ms": 6.957,
+    "combo_median_ms": 0.195,
+    "speedup": 35.677,
+    "combo_times_ms": [
+     0.21,
+     0.188,
+     0.19,
+     0.195,
+     0.2
+    ],
+    "indexes_used": [
+     "ixl_ix_k03_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Gather Merge",
+     "Sort",
+     "Seq Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   },
+   {
+    "group": "returned_app",
+    "weight": 2.0,
+    "baseline_median_ms": 6.149,
+    "combo_median_ms": 1.122,
+    "speedup": 5.48,
+    "combo_times_ms": [
+     1.114,
+     1.158,
+     1.154,
+     1.091,
+     1.122
+    ],
+    "indexes_used": [
+     "ixl_ix_k03_0"
+    ],
+    "node_types_base": [
+     "Limit",
+     "Sort",
+     "Bitmap Heap Scan",
+     "Bitmap Index Scan"
+    ],
+    "node_types_combo": [
+     "Limit",
+     "Incremental Sort",
+     "Index Scan"
+    ]
+   }
+  ]
+ }
+}
