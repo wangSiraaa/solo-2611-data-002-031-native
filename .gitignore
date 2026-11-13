@@ -11,3 +11,9 @@ venv/
 htmlcov/
 .DS_Store
 *.log
+
+# generated samples, version stores and verify workspaces
+samples/
+data/
+verify_workspace/
+demo/
