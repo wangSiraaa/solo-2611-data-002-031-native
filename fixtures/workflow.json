@@ -1,0 +1,49 @@
+{
+  "steps": [
+    {
+      "name": "login",
+      "method": "POST",
+      "path": "/sessions",
+      "body": {
+        "user": "demo",
+        "password": "demo-secret"
+      },
+      "response_bindings": {
+        "session": "/session/id"
+      }
+    },
+    {
+      "name": "create",
+      "method": "POST",
+      "path": "/sessions/${session}/reports",
+      "headers": {
+        "Authorization": "Bearer ${session}"
+      },
+      "body": {
+        "period": "2026-10"
+      },
+      "response_bindings": {
+        "report": "/report/id"
+      }
+    },
+    {
+      "name": "read",
+      "method": "GET",
+      "path": "/reports/${report}",
+      "headers": {
+        "Authorization": "Bearer ${session}"
+      }
+    }
+  ],
+  "redact_request_json_pointers": [
+    "/password"
+  ],
+  "redact_request_headers": [
+    "Authorization",
+    "Cookie"
+  ],
+  "generated_symbols": [
+    "session",
+    "report"
+  ]
+}
