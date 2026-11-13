@@ -1,0 +1,621 @@
+{
+  "schema": "legacy-pty-assistant/v1",
+  "run_id": "20261113T202012Z-1d35ad",
+  "started_at": "2026-11-13T20:20:12.989320+00:00",
+  "argv": [
+    "/workspace/terminal_assistant/__main__.py",
+    "--csv",
+    "/workspace/fixtures/changes.csv",
+    "--db",
+    "/workspace/demo/records/01-happy-path/legacy.sqlite",
+    "--faults",
+    "/workspace/demo/records/01-happy-path/faults-run.json",
+    "--app",
+    "/workspace/fixtures/legacy_app.py",
+    "--report",
+    "/workspace/demo/records/01-happy-path/report.json",
+    "--raw-dir",
+    "/workspace/demo/records/01-happy-path/raw",
+    "--settle",
+    "0.15",
+    "--yes"
+  ],
+  "app_argv": [
+    "/workspace/.venv/bin/python",
+    "/workspace/fixtures/legacy_app.py",
+    "--db",
+    "/workspace/demo/records/01-happy-path/legacy.sqlite",
+    "--faults",
+    "/workspace/demo/records/01-happy-path/faults-run.json"
+  ],
+  "csv": "/workspace/fixtures/changes.csv",
+  "db": "/workspace/demo/records/01-happy-path/legacy.sqlite",
+  "faults": "/workspace/demo/records/01-happy-path/faults-run.json",
+  "retry_policy_after_disconnect": "safe-old-values",
+  "exactly_once_disclaimer": "回读只能证明当前值/修订号，不能证明恰好一次写入；本报告不声称 exactly-once。",
+  "items": [
+    {
+      "code": "A001",
+      "line_no": 2,
+      "expected_old_name": "铅笔",
+      "current": {
+        "name": "铅笔",
+        "unit": "支",
+        "price": "1.20",
+        "revision": 1
+      },
+      "plan": {
+        "name": "中华铅笔",
+        "unit": "支",
+        "price": "1.50"
+      },
+      "old_name_matches": true,
+      "diff": {
+        "name": {
+          "old": "铅笔",
+          "new": "中华铅笔",
+          "changed": true
+        },
+        "unit": {
+          "old": "支",
+          "new": "支",
+          "changed": false
+        },
+        "price": {
+          "old": "1.20",
+          "new": "1.50",
+          "changed": true
+        }
+      },
+      "has_changes": true,
+      "prequery": {
+        "kind": "result",
+        "attempts": 1,
+        "detail": "已读取查询结果",
+        "actions": [
+          {
+            "ts": "2026-11-13T20:20:13.193717+00:00",
+            "step": "startup",
+            "sent": null,
+            "title": "主菜单",
+            "feedback": "Q=查询 X=退出",
+            "detail": "主菜单已识别",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:13.453109+00:00",
+            "step": "prequery1:menu",
+            "sent": "q",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:13.453729+00:00",
+            "step": "prequery1:send-code",
+            "sent": "A001",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "已发送编码",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:13.715048+00:00",
+            "step": "prequery1:lookup",
+            "sent": "A001",
+            "title": "查询结果",
+            "feedback": "E=编辑 B=返回",
+            "detail": "",
+            "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A001\n05|名称: 铅笔\n06|单位: 支\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+          }
+        ]
+      },
+      "status": "confirmed",
+      "needs_followup": false,
+      "edit_prequery": {
+        "kind": "result",
+        "detail": "",
+        "title": "查询结果",
+        "record": {
+          "编码": "A001",
+          "名称": "铅笔",
+          "单位": "支",
+          "价格": "1.20",
+          "修订号": "1"
+        }
+      },
+      "actions": [
+        {
+          "attempt": 1,
+          "kind": "success",
+          "feedback": "保存成功；请重新查询确认",
+          "detail": "保存成功提示已见；已回车退出编辑",
+          "at_main": true,
+          "screens": [
+            {
+              "ts": "2026-11-13T20:20:16.249616+00:00",
+              "step": "edit-A001:enter",
+              "sent": "e",
+              "title": "编辑",
+              "feedback": "请输入名称（空行保留）",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A001\n05|名称: 铅笔\n06|单位: 支\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|请输入名称（空行保留）\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:16.501917+00:00",
+              "step": "edit-A001:name",
+              "sent": "中华铅笔",
+              "title": "编辑",
+              "feedback": "选择单位: 1=支 2=盒 3=袋；空行保留",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A001\n05|名称: 中华铅笔 [尚未保存]\n06|单位: 支\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|选择单位: 1=支 2=盒 3=袋；空行保留\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:16.707230+00:00",
+              "step": "edit-A001:unit",
+              "sent": "",
+              "title": "编辑",
+              "feedback": "请输入价格（空行保留）",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A001\n05|名称: 中华铅笔 [尚未保存]\n06|单位: 支 [尚未保存]\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|请输入价格（空行保留）\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:16.972942+00:00",
+              "step": "edit-A001:price",
+              "sent": "1.50",
+              "title": "编辑",
+              "feedback": "S=保存 B=放弃",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A001\n05|名称: 中华铅笔 [尚未保存]\n06|单位: 支 [尚未保存]\n07|价格: 1.50 [尚未保存]\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|S=保存 B=放弃\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:17.242268+00:00",
+              "step": "edit-A001:save",
+              "sent": "s",
+              "title": "编辑",
+              "feedback": "保存成功；请重新查询确认",
+              "detail": "已发送 S",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A001\n05|名称: 中华铅笔 [尚未保存]\n06|单位: 支 [尚未保存]\n07|价格: 1.50 [尚未保存]\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|保存成功；请重新查询确认\n20|\n21|\n22|回车返回查询\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:17.505917+00:00",
+              "step": "edit-A001:ack-success",
+              "sent": "",
+              "title": "主菜单",
+              "feedback": "Q=查询 X=退出",
+              "detail": "",
+              "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+            }
+          ]
+        }
+      ],
+      "save_feedback": "保存成功；请重新查询确认",
+      "readback_actions": [
+        {
+          "ts": "2026-11-13T20:20:17.770759+00:00",
+          "step": "readback:menu",
+          "sent": "q",
+          "title": "主菜单",
+          "feedback": "输入资料编码",
+          "detail": "",
+          "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+        },
+        {
+          "ts": "2026-11-13T20:20:17.771251+00:00",
+          "step": "readback:send-code",
+          "sent": "A001",
+          "title": "主菜单",
+          "feedback": "输入资料编码",
+          "detail": "已发送编码",
+          "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+        },
+        {
+          "ts": "2026-11-13T20:20:18.023637+00:00",
+          "step": "readback:lookup",
+          "sent": "A001",
+          "title": "查询结果",
+          "feedback": "E=编辑 B=返回",
+          "detail": "",
+          "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A001\n05|名称: 中华铅笔\n06|单位: 支\n07|价格: 1.50\n08|修订号: 2\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+        }
+      ],
+      "readback": {
+        "kind": "result",
+        "detail": "",
+        "title": "查询结果",
+        "record": {
+          "编码": "A001",
+          "名称": "中华铅笔",
+          "单位": "支",
+          "价格": "1.50",
+          "修订号": "2"
+        }
+      },
+      "readback_values": {
+        "name": "中华铅笔",
+        "unit": "支",
+        "price": "1.50",
+        "revision": 2
+      },
+      "detail": "退出编辑后重新查询，现值与计划一致且修订号递增，完成该条"
+    },
+    {
+      "code": "A002",
+      "line_no": 3,
+      "expected_old_name": "茶包",
+      "current": {
+        "name": "茶包",
+        "unit": "盒",
+        "price": "18.00",
+        "revision": 1
+      },
+      "plan": {
+        "name": "绿茶包",
+        "unit": "盒",
+        "price": "20.00"
+      },
+      "old_name_matches": true,
+      "diff": {
+        "name": {
+          "old": "茶包",
+          "new": "绿茶包",
+          "changed": true
+        },
+        "unit": {
+          "old": "盒",
+          "new": "盒",
+          "changed": false
+        },
+        "price": {
+          "old": "18.00",
+          "new": "20.00",
+          "changed": true
+        }
+      },
+      "has_changes": true,
+      "prequery": {
+        "kind": "result",
+        "attempts": 1,
+        "detail": "已读取查询结果",
+        "actions": [
+          {
+            "ts": "2026-11-13T20:20:14.330490+00:00",
+            "step": "startup",
+            "sent": null,
+            "title": "主菜单",
+            "feedback": "Q=查询 X=退出",
+            "detail": "主菜单已识别",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:14.570956+00:00",
+            "step": "prequery1:menu",
+            "sent": "q",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:14.571255+00:00",
+            "step": "prequery1:send-code",
+            "sent": "A002",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "已发送编码",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:14.838098+00:00",
+            "step": "prequery1:lookup",
+            "sent": "A002",
+            "title": "查询结果",
+            "feedback": "E=编辑 B=返回",
+            "detail": "",
+            "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A002\n05|名称: 茶包\n06|单位: 盒\n07|价格: 18.00\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+          }
+        ]
+      },
+      "status": "confirmed",
+      "needs_followup": false,
+      "edit_prequery": {
+        "kind": "result",
+        "detail": "",
+        "title": "查询结果",
+        "record": {
+          "编码": "A002",
+          "名称": "茶包",
+          "单位": "盒",
+          "价格": "18.00",
+          "修订号": "1"
+        }
+      },
+      "actions": [
+        {
+          "attempt": 1,
+          "kind": "success",
+          "feedback": "保存成功；请重新查询确认",
+          "detail": "保存成功提示已见；已回车退出编辑",
+          "at_main": true,
+          "screens": [
+            {
+              "ts": "2026-11-13T20:20:19.371837+00:00",
+              "step": "edit-A002:enter",
+              "sent": "e",
+              "title": "编辑",
+              "feedback": "请输入名称（空行保留）",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A002\n05|名称: 茶包\n06|单位: 盒\n07|价格: 18.00\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|请输入名称（空行保留）\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:19.620400+00:00",
+              "step": "edit-A002:name",
+              "sent": "绿茶包",
+              "title": "编辑",
+              "feedback": "选择单位: 1=支 2=盒 3=袋；空行保留",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A002\n05|名称: 绿茶包 [尚未保存]\n06|单位: 盒\n07|价格: 18.00\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|选择单位: 1=支 2=盒 3=袋；空行保留\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:19.876327+00:00",
+              "step": "edit-A002:unit",
+              "sent": "",
+              "title": "编辑",
+              "feedback": "请输入价格（空行保留）",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A002\n05|名称: 绿茶包 [尚未保存]\n06|单位: 盒 [尚未保存]\n07|价格: 18.00\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|请输入价格（空行保留）\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:20.140681+00:00",
+              "step": "edit-A002:price",
+              "sent": "20.00",
+              "title": "编辑",
+              "feedback": "S=保存 B=放弃",
+              "detail": "",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A002\n05|名称: 绿茶包 [尚未保存]\n06|单位: 盒 [尚未保存]\n07|价格: 20.00 [尚未保存]\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|S=保存 B=放弃\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:20.392574+00:00",
+              "step": "edit-A002:save",
+              "sent": "s",
+              "title": "编辑",
+              "feedback": "保存成功；请重新查询确认",
+              "detail": "已发送 S",
+              "screen": "01|资料终端 | 编辑\n02|\n03|\n04|编码: A002\n05|名称: 绿茶包 [尚未保存]\n06|单位: 盒 [尚未保存]\n07|价格: 20.00 [尚未保存]\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|保存成功；请重新查询确认\n20|\n21|\n22|回车返回查询\n23|\n24|"
+            },
+            {
+              "ts": "2026-11-13T20:20:20.606968+00:00",
+              "step": "edit-A002:ack-success",
+              "sent": "",
+              "title": "主菜单",
+              "feedback": "Q=查询 X=退出",
+              "detail": "",
+              "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+            }
+          ]
+        }
+      ],
+      "save_feedback": "保存成功；请重新查询确认",
+      "readback_actions": [
+        {
+          "ts": "2026-11-13T20:20:20.878532+00:00",
+          "step": "readback:menu",
+          "sent": "q",
+          "title": "主菜单",
+          "feedback": "输入资料编码",
+          "detail": "",
+          "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+        },
+        {
+          "ts": "2026-11-13T20:20:20.879131+00:00",
+          "step": "readback:send-code",
+          "sent": "A002",
+          "title": "主菜单",
+          "feedback": "输入资料编码",
+          "detail": "已发送编码",
+          "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+        },
+        {
+          "ts": "2026-11-13T20:20:21.164635+00:00",
+          "step": "readback:lookup",
+          "sent": "A002",
+          "title": "查询结果",
+          "feedback": "E=编辑 B=返回",
+          "detail": "",
+          "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A002\n05|名称: 绿茶包\n06|单位: 盒\n07|价格: 20.00\n08|修订号: 2\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+        }
+      ],
+      "readback": {
+        "kind": "result",
+        "detail": "",
+        "title": "查询结果",
+        "record": {
+          "编码": "A002",
+          "名称": "绿茶包",
+          "单位": "盒",
+          "价格": "20.00",
+          "修订号": "2"
+        }
+      },
+      "readback_values": {
+        "name": "绿茶包",
+        "unit": "盒",
+        "price": "20.00",
+        "revision": 2
+      },
+      "detail": "退出编辑后重新查询，现值与计划一致且修订号递增，完成该条"
+    }
+  ],
+  "blockers": [],
+  "csv_sha256": "544ca0883d150f4f3ff1bfe1f4fcfa1118b9693290a65434e2b991b08b6baf55",
+  "plan": [
+    {
+      "code": "A001",
+      "line_no": 2,
+      "expected_old_name": "铅笔",
+      "current": {
+        "name": "铅笔",
+        "unit": "支",
+        "price": "1.20",
+        "revision": 1
+      },
+      "plan": {
+        "name": "中华铅笔",
+        "unit": "支",
+        "price": "1.50"
+      },
+      "old_name_matches": true,
+      "diff": {
+        "name": {
+          "old": "铅笔",
+          "new": "中华铅笔",
+          "changed": true
+        },
+        "unit": {
+          "old": "支",
+          "new": "支",
+          "changed": false
+        },
+        "price": {
+          "old": "1.20",
+          "new": "1.50",
+          "changed": true
+        }
+      },
+      "has_changes": true,
+      "prequery": {
+        "kind": "result",
+        "attempts": 1,
+        "detail": "已读取查询结果",
+        "actions": [
+          {
+            "ts": "2026-11-13T20:20:13.193717+00:00",
+            "step": "startup",
+            "sent": null,
+            "title": "主菜单",
+            "feedback": "Q=查询 X=退出",
+            "detail": "主菜单已识别",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:13.453109+00:00",
+            "step": "prequery1:menu",
+            "sent": "q",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:13.453729+00:00",
+            "step": "prequery1:send-code",
+            "sent": "A001",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "已发送编码",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:13.715048+00:00",
+            "step": "prequery1:lookup",
+            "sent": "A001",
+            "title": "查询结果",
+            "feedback": "E=编辑 B=返回",
+            "detail": "",
+            "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A001\n05|名称: 铅笔\n06|单位: 支\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+          }
+        ]
+      },
+      "status": "pending",
+      "needs_followup": true
+    },
+    {
+      "code": "A002",
+      "line_no": 3,
+      "expected_old_name": "茶包",
+      "current": {
+        "name": "茶包",
+        "unit": "盒",
+        "price": "18.00",
+        "revision": 1
+      },
+      "plan": {
+        "name": "绿茶包",
+        "unit": "盒",
+        "price": "20.00"
+      },
+      "old_name_matches": true,
+      "diff": {
+        "name": {
+          "old": "茶包",
+          "new": "绿茶包",
+          "changed": true
+        },
+        "unit": {
+          "old": "盒",
+          "new": "盒",
+          "changed": false
+        },
+        "price": {
+          "old": "18.00",
+          "new": "20.00",
+          "changed": true
+        }
+      },
+      "has_changes": true,
+      "prequery": {
+        "kind": "result",
+        "attempts": 1,
+        "detail": "已读取查询结果",
+        "actions": [
+          {
+            "ts": "2026-11-13T20:20:14.330490+00:00",
+            "step": "startup",
+            "sent": null,
+            "title": "主菜单",
+            "feedback": "Q=查询 X=退出",
+            "detail": "主菜单已识别",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:14.570956+00:00",
+            "step": "prequery1:menu",
+            "sent": "q",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:14.571255+00:00",
+            "step": "prequery1:send-code",
+            "sent": "A002",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "已发送编码",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:14.838098+00:00",
+            "step": "prequery1:lookup",
+            "sent": "A002",
+            "title": "查询结果",
+            "feedback": "E=编辑 B=返回",
+            "detail": "",
+            "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A002\n05|名称: 茶包\n06|单位: 盒\n07|价格: 18.00\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+          }
+        ]
+      },
+      "status": "pending",
+      "needs_followup": true
+    }
+  ],
+  "approved": true,
+  "approved_at": "2026-11-13T20:20:15.281473+00:00",
+  "finished_at": "2026-11-13T20:20:21.623489+00:00",
+  "counts": {
+    "confirmed": 2,
+    "needs_followup": 0
+  }
+}

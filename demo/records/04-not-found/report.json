@@ -1,0 +1,76 @@
+{
+  "schema": "legacy-pty-assistant/v1",
+  "run_id": "20261113T202024Z-c13fed",
+  "started_at": "2026-11-13T20:20:24.198878+00:00",
+  "argv": [
+    "/workspace/terminal_assistant/__main__.py",
+    "--csv",
+    "/workspace/demo/csv/notfound.csv",
+    "--db",
+    "/workspace/demo/records/04-not-found/legacy.sqlite",
+    "--faults",
+    "/workspace/demo/records/04-not-found/faults-run.json",
+    "--app",
+    "/workspace/fixtures/legacy_app.py",
+    "--report",
+    "/workspace/demo/records/04-not-found/report.json",
+    "--raw-dir",
+    "/workspace/demo/records/04-not-found/raw",
+    "--settle",
+    "0.15",
+    "--plan-only"
+  ],
+  "app_argv": [
+    "/workspace/.venv/bin/python",
+    "/workspace/fixtures/legacy_app.py",
+    "--db",
+    "/workspace/demo/records/04-not-found/legacy.sqlite",
+    "--faults",
+    "/workspace/demo/records/04-not-found/faults-run.json"
+  ],
+  "csv": "/workspace/demo/csv/notfound.csv",
+  "db": "/workspace/demo/records/04-not-found/legacy.sqlite",
+  "faults": "/workspace/demo/records/04-not-found/faults-run.json",
+  "retry_policy_after_disconnect": "safe-old-values",
+  "exactly_once_disclaimer": "回读只能证明当前值/修订号，不能证明恰好一次写入；本报告不声称 exactly-once。",
+  "items": [
+    {
+      "code": "ZZZZ",
+      "line_no": 2,
+      "kind": "not_found",
+      "status": "not_found",
+      "detail": "编码不存在；已确认返回",
+      "needs_followup": true,
+      "plan": {
+        "name": "不存在",
+        "unit": "支",
+        "price": "1.00"
+      }
+    }
+  ],
+  "blockers": [
+    "编码 ZZZZ 查询不到（停在查询，不编辑）"
+  ],
+  "csv_sha256": "968140b89a5ac2c709acccc026174e6d3eea906f17386fe1c57b6f404eef1290",
+  "plan": [
+    {
+      "code": "ZZZZ",
+      "line_no": 2,
+      "kind": "not_found",
+      "status": "not_found",
+      "detail": "编码不存在；已确认返回",
+      "needs_followup": true,
+      "plan": {
+        "name": "不存在",
+        "unit": "支",
+        "price": "1.00"
+      }
+    }
+  ],
+  "approved": false,
+  "counts": {
+    "not_found": 1,
+    "needs_followup": 1
+  },
+  "finished_at": "2026-11-13T20:20:25.379987+00:00"
+}

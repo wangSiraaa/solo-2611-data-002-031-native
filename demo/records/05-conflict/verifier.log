@@ -1,0 +1,69 @@
+$ /workspace/.venv/bin/python /workspace/tools/verify_db.py --db /workspace/demo/records/05-conflict/legacy.sqlite --csv /workspace/fixtures/changes.csv --expect any --json /workspace/demo/records/05-conflict/verify.json
+
+{
+  "verifier": "independent-sqlite/v1",
+  "db": "/workspace/demo/records/05-conflict/legacy.sqlite",
+  "note": "写入历史条数不等于恰好一次写入证明；仅描述已提交记录。",
+  "items": [
+    {
+      "code": "A001",
+      "exists": true,
+      "current": {
+        "code": "A001",
+        "name": "铅笔-外部修改",
+        "unit": "支",
+        "price": "1.20",
+        "revision": 2
+      },
+      "plan_matches_current": false,
+      "history_writes": [],
+      "plan_valued_history_writes": [],
+      "plan_valued_write_count": 0,
+      "unchanged_from_baseline": null
+    },
+    {
+      "code": "A002",
+      "exists": true,
+      "current": {
+        "code": "A002",
+        "name": "绿茶包",
+        "unit": "盒",
+        "price": "20.00",
+        "revision": 2
+      },
+      "plan_matches_current": true,
+      "history_writes": [
+        {
+          "seq": 1,
+          "code": "A002",
+          "name": "绿茶包",
+          "unit": "盒",
+          "price": "20.00",
+          "revision": 2
+        }
+      ],
+      "plan_valued_history_writes": [
+        {
+          "seq": 1,
+          "code": "A002",
+          "name": "绿茶包",
+          "unit": "盒",
+          "price": "20.00",
+          "revision": 2
+        }
+      ],
+      "plan_valued_write_count": 1,
+      "unchanged_from_baseline": null
+    }
+  ],
+  "all_codes": [
+    "A001",
+    "A002",
+    "A003"
+  ],
+  "history_total": 1,
+  "expect": "any",
+  "expectation_ok": true
+}
+
+--- stderr ---

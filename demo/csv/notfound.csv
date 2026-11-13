@@ -1,0 +1,2 @@
+catalog_code,name,unit,price,expected_old_name
+ZZZZ,不存在,支,1.00,不存在

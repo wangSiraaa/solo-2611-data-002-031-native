@@ -1,0 +1,147 @@
+[
+  {
+    "name": "01-happy-path",
+    "title": "正常保存：逐条编辑、退出后回读一致",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "confirmed",
+      "A002": "confirmed"
+    },
+    "counts": {
+      "confirmed": 2,
+      "needs_followup": 0
+    },
+    "verifier_ok": true,
+    "history_total": 2
+  },
+  {
+    "name": "02-unchanged",
+    "title": "无变化记录不保存",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "unchanged"
+    },
+    "counts": {
+      "unchanged": 1,
+      "needs_followup": 0
+    },
+    "verifier_ok": true,
+    "history_total": 0
+  },
+  {
+    "name": "03-old-name-mismatch",
+    "title": "预期旧名称不符：停在查询，不编辑",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "old_name_mismatch"
+    },
+    "counts": {
+      "old_name_mismatch": 1,
+      "needs_followup": 1
+    },
+    "verifier_ok": true,
+    "history_total": 0
+  },
+  {
+    "name": "04-not-found",
+    "title": "编码查不到：停在查询",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "ZZZZ": "not_found"
+    },
+    "counts": {
+      "not_found": 1,
+      "needs_followup": 1
+    },
+    "verifier_ok": true,
+    "history_total": 0
+  },
+  {
+    "name": "05-conflict",
+    "title": "修订冲突：重新查询并报告，不覆盖",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "conflict",
+      "A002": "confirmed"
+    },
+    "counts": {
+      "conflict": 1,
+      "confirmed": 1,
+      "needs_followup": 1
+    },
+    "verifier_ok": true,
+    "history_total": 1
+  },
+  {
+    "name": "06-unknown-popup",
+    "title": "未知弹窗：停止并保留现场，不盲按回车",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "unknown_popup",
+      "A002": "not_attempted"
+    },
+    "counts": {
+      "unknown_popup": 1,
+      "not_attempted": 1,
+      "needs_followup": 2
+    },
+    "verifier_ok": true,
+    "history_total": 0
+  },
+  {
+    "name": "07-reject-save",
+    "title": "保存被业务规则拒绝：记录反馈后继续",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "rejected",
+      "A002": "confirmed"
+    },
+    "counts": {
+      "rejected": 1,
+      "confirmed": 1,
+      "needs_followup": 1
+    },
+    "verifier_ok": true,
+    "history_total": 1
+  },
+  {
+    "name": "08-query-unavailable",
+    "title": "查询暂不可用：短暂重试后读取",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "confirmed",
+      "A002": "confirmed"
+    },
+    "counts": {
+      "confirmed": 2,
+      "needs_followup": 0
+    },
+    "verifier_ok": true,
+    "history_total": 2
+  },
+  {
+    "name": "09-drop-after-save",
+    "title": "成功提示前断线：重启终端按编码回读，仅确认当前值",
+    "assistant_exit": 0,
+    "verifier_exit": 0,
+    "statuses": {
+      "A001": "confirmed_current",
+      "A002": "confirmed"
+    },
+    "counts": {
+      "confirmed_current": 1,
+      "confirmed": 1,
+      "needs_followup": 0
+    },
+    "verifier_ok": true,
+    "history_total": 2
+  }
+]

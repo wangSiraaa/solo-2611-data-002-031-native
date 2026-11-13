@@ -1,0 +1,41 @@
+$ /workspace/.venv/bin/python -m terminal_assistant --csv /workspace/fixtures/changes.csv --db /workspace/demo/records/09-drop-after-save/legacy.sqlite --faults /workspace/demo/records/09-drop-after-save/faults-run.json --app /workspace/fixtures/legacy_app.py --report /workspace/demo/records/09-drop-after-save/report.json --raw-dir /workspace/demo/records/09-drop-after-save/raw --settle 0.15 --yes
+
+校验通过：2 条变更（CSV sha256=544ca0883d150f4f…）
+预查询终端现值（只读，不进入编辑）…
+  - A001: 读取成功（尝试 1 次）
+  - A002: 读取成功（尝试 1 次）
+
+计划与逐字段差异：
+[A001] 行 2  预期旧名称='铅笔'
+  当前: 名称='铅笔' 单位='支' 价格='1.20' 修订号=1
+  计划: 名称='中华铅笔' 单位='支' 价格='1.50'
+    名称: '铅笔' -> '中华铅笔' [变更]
+    单位: '支' -> '支' [不变]
+    价格: '1.20' -> '1.50' [变更]
+[A002] 行 3  预期旧名称='茶包'
+  当前: 名称='茶包' 单位='盒' 价格='18.00' 修订号=1
+  计划: 名称='绿茶包' 单位='盒' 价格='20.00'
+    名称: '茶包' -> '绿茶包' [变更]
+    单位: '盒' -> '盒' [不变]
+    价格: '18.00' -> '20.00' [变更]
+
+预期旧名称不符清单：无
+已通过 --yes 确认计划（演示/自动化模式）。
+编辑 A001 …
+  -> save_unconfirmed: 发送保存后、保存反馈前 PTY 断开
+编辑 A002 …
+  -> confirmed: 退出编辑后重新查询，现值与计划一致且修订号递增，完成该条
+恢复 A001: 重启终端按编码回读 …
+  -> confirmed_current: 重启终端后按编码回读，现值全等于计划值 → 当前值已确认。这不证明恰好一次写入，仅证明当前值正确；修订号恰好递增
+报告: /workspace/demo/records/09-drop-after-save/report.json
+
+最终处置：
+  [A001] confirmed_current — 重启终端后按编码回读，现值全等于计划值 → 当前值已确认。这不证明恰好一次写入，仅证明当前值正确；修订号恰好递增
+    回读: {'name': '中华铅笔', 'unit': '支', 'price': '1.50', 'revision': 2}
+  [A002] confirmed — 退出编辑后重新查询，现值与计划一致且修订号递增，完成该条
+    保存反馈: 保存成功；请重新查询确认
+    回读: {'name': '绿茶包', 'unit': '盒', 'price': '20.00', 'revision': 2}
+
+注意：回读只证明当前值/修订号，不证明恰好一次写入。
+
+--- stderr ---

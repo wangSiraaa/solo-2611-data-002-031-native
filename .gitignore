@@ -7,7 +7,9 @@ venv/
 !.env.example
 .runtime/
 .pytest_cache/
+.ruff_cache/
 .coverage
 htmlcov/
 .DS_Store
 *.log
+!demo/records/**/*.log

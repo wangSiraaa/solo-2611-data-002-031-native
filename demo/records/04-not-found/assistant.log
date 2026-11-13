@@ -1,0 +1,16 @@
+$ /workspace/.venv/bin/python -m terminal_assistant --csv /workspace/demo/csv/notfound.csv --db /workspace/demo/records/04-not-found/legacy.sqlite --faults /workspace/demo/records/04-not-found/faults-run.json --app /workspace/fixtures/legacy_app.py --report /workspace/demo/records/04-not-found/report.json --raw-dir /workspace/demo/records/04-not-found/raw --settle 0.15 --plan-only
+
+校验通过：1 条变更（CSV sha256=968140b89a5ac2c7…）
+预查询终端现值（只读，不进入编辑）…
+  - ZZZZ: not_found（尝试 1 次）
+
+计划与逐字段差异：
+[ZZZZ] 行 2  预期旧名称=None
+  查询状态: not_found — 编码不存在；已确认返回
+
+预期旧名称不符 / 查询不可用清单：
+  - 编码 ZZZZ 查询不到（停在查询，不编辑）
+报告: /workspace/demo/records/04-not-found/report.json
+已生成计划（--plan-only）；未进入编辑。
+
+--- stderr ---

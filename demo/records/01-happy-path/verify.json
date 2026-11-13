@@ -1,0 +1,83 @@
+{
+  "verifier": "independent-sqlite/v1",
+  "db": "/workspace/demo/records/01-happy-path/legacy.sqlite",
+  "note": "写入历史条数不等于恰好一次写入证明；仅描述已提交记录。",
+  "items": [
+    {
+      "code": "A001",
+      "exists": true,
+      "current": {
+        "code": "A001",
+        "name": "中华铅笔",
+        "unit": "支",
+        "price": "1.50",
+        "revision": 2
+      },
+      "plan_matches_current": true,
+      "history_writes": [
+        {
+          "seq": 1,
+          "code": "A001",
+          "name": "中华铅笔",
+          "unit": "支",
+          "price": "1.50",
+          "revision": 2
+        }
+      ],
+      "plan_valued_history_writes": [
+        {
+          "seq": 1,
+          "code": "A001",
+          "name": "中华铅笔",
+          "unit": "支",
+          "price": "1.50",
+          "revision": 2
+        }
+      ],
+      "plan_valued_write_count": 1,
+      "unchanged_from_baseline": null
+    },
+    {
+      "code": "A002",
+      "exists": true,
+      "current": {
+        "code": "A002",
+        "name": "绿茶包",
+        "unit": "盒",
+        "price": "20.00",
+        "revision": 2
+      },
+      "plan_matches_current": true,
+      "history_writes": [
+        {
+          "seq": 2,
+          "code": "A002",
+          "name": "绿茶包",
+          "unit": "盒",
+          "price": "20.00",
+          "revision": 2
+        }
+      ],
+      "plan_valued_history_writes": [
+        {
+          "seq": 2,
+          "code": "A002",
+          "name": "绿茶包",
+          "unit": "盒",
+          "price": "20.00",
+          "revision": 2
+        }
+      ],
+      "plan_valued_write_count": 1,
+      "unchanged_from_baseline": null
+    }
+  ],
+  "all_codes": [
+    "A001",
+    "A002",
+    "A003"
+  ],
+  "history_total": 2,
+  "expect": "applied",
+  "expectation_ok": true
+}

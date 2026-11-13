@@ -1,0 +1,21 @@
+$ /workspace/.venv/bin/python -m terminal_assistant --csv /workspace/demo/csv/mismatch.csv --db /workspace/demo/records/03-old-name-mismatch/legacy.sqlite --faults /workspace/demo/records/03-old-name-mismatch/faults-run.json --app /workspace/fixtures/legacy_app.py --report /workspace/demo/records/03-old-name-mismatch/report.json --raw-dir /workspace/demo/records/03-old-name-mismatch/raw --settle 0.15 --plan-only
+
+校验通过：1 条变更（CSV sha256=f22af40b7bce8b35…）
+预查询终端现值（只读，不进入编辑）…
+  - A001: 读取成功（尝试 1 次）
+
+计划与逐字段差异：
+[A001] 行 2  预期旧名称='错名称'
+  当前: 名称='铅笔' 单位='支' 价格='1.20' 修订号=1
+  计划: 名称='中华铅笔' 单位='支' 价格='1.50'
+    名称: '铅笔' -> '中华铅笔' [变更]
+    单位: '支' -> '支' [不变]
+    价格: '1.20' -> '1.50' [变更]
+  处置: old_name_mismatch — 预期旧名称与实际不一致；停在查询，未进入编辑
+
+预期旧名称不符 / 查询不可用清单：
+  - 编码 A001 预期旧名称不符: CSV='错名称' 实际='铅笔'（停在查询，不编辑）
+报告: /workspace/demo/records/03-old-name-mismatch/report.json
+已生成计划（--plan-only）；未进入编辑。
+
+--- stderr ---

@@ -1,0 +1,47 @@
+{
+  "verifier": "independent-sqlite/v1",
+  "db": "/workspace/demo/records/06-unknown-popup/legacy.sqlite",
+  "note": "写入历史条数不等于恰好一次写入证明；仅描述已提交记录。",
+  "items": [
+    {
+      "code": "A001",
+      "exists": true,
+      "current": {
+        "code": "A001",
+        "name": "铅笔",
+        "unit": "支",
+        "price": "1.20",
+        "revision": 1
+      },
+      "plan_matches_current": false,
+      "history_writes": [],
+      "plan_valued_history_writes": [],
+      "plan_valued_write_count": 0,
+      "unchanged_from_baseline": null
+    },
+    {
+      "code": "A002",
+      "exists": true,
+      "current": {
+        "code": "A002",
+        "name": "茶包",
+        "unit": "盒",
+        "price": "18.00",
+        "revision": 1
+      },
+      "plan_matches_current": false,
+      "history_writes": [],
+      "plan_valued_history_writes": [],
+      "plan_valued_write_count": 0,
+      "unchanged_from_baseline": null
+    }
+  ],
+  "all_codes": [
+    "A001",
+    "A002",
+    "A003"
+  ],
+  "history_total": 0,
+  "expect": "unchanged",
+  "expectation_ok": true
+}

@@ -1,0 +1,212 @@
+{
+  "schema": "legacy-pty-assistant/v1",
+  "run_id": "20261113T202022Z-bb3d13",
+  "started_at": "2026-11-13T20:20:22.956464+00:00",
+  "argv": [
+    "/workspace/terminal_assistant/__main__.py",
+    "--csv",
+    "/workspace/demo/csv/mismatch.csv",
+    "--db",
+    "/workspace/demo/records/03-old-name-mismatch/legacy.sqlite",
+    "--faults",
+    "/workspace/demo/records/03-old-name-mismatch/faults-run.json",
+    "--app",
+    "/workspace/fixtures/legacy_app.py",
+    "--report",
+    "/workspace/demo/records/03-old-name-mismatch/report.json",
+    "--raw-dir",
+    "/workspace/demo/records/03-old-name-mismatch/raw",
+    "--settle",
+    "0.15",
+    "--plan-only"
+  ],
+  "app_argv": [
+    "/workspace/.venv/bin/python",
+    "/workspace/fixtures/legacy_app.py",
+    "--db",
+    "/workspace/demo/records/03-old-name-mismatch/legacy.sqlite",
+    "--faults",
+    "/workspace/demo/records/03-old-name-mismatch/faults-run.json"
+  ],
+  "csv": "/workspace/demo/csv/mismatch.csv",
+  "db": "/workspace/demo/records/03-old-name-mismatch/legacy.sqlite",
+  "faults": "/workspace/demo/records/03-old-name-mismatch/faults-run.json",
+  "retry_policy_after_disconnect": "safe-old-values",
+  "exactly_once_disclaimer": "回读只能证明当前值/修订号，不能证明恰好一次写入；本报告不声称 exactly-once。",
+  "items": [
+    {
+      "code": "A001",
+      "line_no": 2,
+      "expected_old_name": "错名称",
+      "current": {
+        "name": "铅笔",
+        "unit": "支",
+        "price": "1.20",
+        "revision": 1
+      },
+      "plan": {
+        "name": "中华铅笔",
+        "unit": "支",
+        "price": "1.50"
+      },
+      "old_name_matches": false,
+      "diff": {
+        "name": {
+          "old": "铅笔",
+          "new": "中华铅笔",
+          "changed": true
+        },
+        "unit": {
+          "old": "支",
+          "new": "支",
+          "changed": false
+        },
+        "price": {
+          "old": "1.20",
+          "new": "1.50",
+          "changed": true
+        }
+      },
+      "has_changes": true,
+      "prequery": {
+        "kind": "result",
+        "attempts": 1,
+        "detail": "已读取查询结果",
+        "actions": [
+          {
+            "ts": "2026-11-13T20:20:23.154301+00:00",
+            "step": "startup",
+            "sent": null,
+            "title": "主菜单",
+            "feedback": "Q=查询 X=退出",
+            "detail": "主菜单已识别",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:23.407092+00:00",
+            "step": "prequery1:menu",
+            "sent": "q",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:23.407639+00:00",
+            "step": "prequery1:send-code",
+            "sent": "A001",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "已发送编码",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:23.678063+00:00",
+            "step": "prequery1:lookup",
+            "sent": "A001",
+            "title": "查询结果",
+            "feedback": "E=编辑 B=返回",
+            "detail": "",
+            "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A001\n05|名称: 铅笔\n06|单位: 支\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+          }
+        ]
+      },
+      "status": "old_name_mismatch",
+      "needs_followup": true,
+      "detail": "预期旧名称与实际不一致；停在查询，未进入编辑"
+    }
+  ],
+  "blockers": [
+    "编码 A001 预期旧名称不符: CSV='错名称' 实际='铅笔'（停在查询，不编辑）"
+  ],
+  "csv_sha256": "f22af40b7bce8b3572868a71d6225f5afe5a78a86c522a5c9b6e4bee31269dd0",
+  "plan": [
+    {
+      "code": "A001",
+      "line_no": 2,
+      "expected_old_name": "错名称",
+      "current": {
+        "name": "铅笔",
+        "unit": "支",
+        "price": "1.20",
+        "revision": 1
+      },
+      "plan": {
+        "name": "中华铅笔",
+        "unit": "支",
+        "price": "1.50"
+      },
+      "old_name_matches": false,
+      "diff": {
+        "name": {
+          "old": "铅笔",
+          "new": "中华铅笔",
+          "changed": true
+        },
+        "unit": {
+          "old": "支",
+          "new": "支",
+          "changed": false
+        },
+        "price": {
+          "old": "1.20",
+          "new": "1.50",
+          "changed": true
+        }
+      },
+      "has_changes": true,
+      "prequery": {
+        "kind": "result",
+        "attempts": 1,
+        "detail": "已读取查询结果",
+        "actions": [
+          {
+            "ts": "2026-11-13T20:20:23.154301+00:00",
+            "step": "startup",
+            "sent": null,
+            "title": "主菜单",
+            "feedback": "Q=查询 X=退出",
+            "detail": "主菜单已识别",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|Q=查询 X=退出\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:23.407092+00:00",
+            "step": "prequery1:menu",
+            "sent": "q",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:23.407639+00:00",
+            "step": "prequery1:send-code",
+            "sent": "A001",
+            "title": "主菜单",
+            "feedback": "输入资料编码",
+            "detail": "已发送编码",
+            "screen": "01|资料终端 | 主菜单\n02|\n03|\n04|\n05|\n06|\n07|\n08|\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|输入资料编码\n23|\n24|"
+          },
+          {
+            "ts": "2026-11-13T20:20:23.678063+00:00",
+            "step": "prequery1:lookup",
+            "sent": "A001",
+            "title": "查询结果",
+            "feedback": "E=编辑 B=返回",
+            "detail": "",
+            "screen": "01|资料终端 | 查询结果\n02|\n03|\n04|编码: A001\n05|名称: 铅笔\n06|单位: 支\n07|价格: 1.20\n08|修订号: 1\n09|\n10|\n11|\n12|\n13|\n14|\n15|\n16|\n17|\n18|\n19|\n20|\n21|\n22|E=编辑 B=返回\n23|\n24|"
+          }
+        ]
+      },
+      "status": "old_name_mismatch",
+      "needs_followup": true,
+      "detail": "预期旧名称与实际不一致；停在查询，未进入编辑"
+    }
+  ],
+  "approved": false,
+  "counts": {
+    "old_name_mismatch": 1,
+    "needs_followup": 1
+  },
+  "finished_at": "2026-11-13T20:20:24.124946+00:00"
+}

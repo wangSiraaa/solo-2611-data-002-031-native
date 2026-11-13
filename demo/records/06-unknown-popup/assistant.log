@@ -1,0 +1,36 @@
+$ /workspace/.venv/bin/python -m terminal_assistant --csv /workspace/fixtures/changes.csv --db /workspace/demo/records/06-unknown-popup/legacy.sqlite --faults /workspace/demo/records/06-unknown-popup/faults-run.json --app /workspace/fixtures/legacy_app.py --report /workspace/demo/records/06-unknown-popup/report.json --raw-dir /workspace/demo/records/06-unknown-popup/raw --settle 0.15 --yes
+
+校验通过：2 条变更（CSV sha256=544ca0883d150f4f…）
+预查询终端现值（只读，不进入编辑）…
+  - A001: 读取成功（尝试 1 次）
+  - A002: 读取成功（尝试 1 次）
+
+计划与逐字段差异：
+[A001] 行 2  预期旧名称='铅笔'
+  当前: 名称='铅笔' 单位='支' 价格='1.20' 修订号=1
+  计划: 名称='中华铅笔' 单位='支' 价格='1.50'
+    名称: '铅笔' -> '中华铅笔' [变更]
+    单位: '支' -> '支' [不变]
+    价格: '1.20' -> '1.50' [变更]
+[A002] 行 3  预期旧名称='茶包'
+  当前: 名称='茶包' 单位='盒' 价格='18.00' 修订号=1
+  计划: 名称='绿茶包' 单位='盒' 价格='20.00'
+    名称: '茶包' -> '绿茶包' [变更]
+    单位: '盒' -> '盒' [不变]
+    价格: '18.00' -> '20.00' [变更]
+
+预期旧名称不符清单：无
+已通过 --yes 确认计划（演示/自动化模式）。
+编辑 A001 …
+  -> unknown_popup: 价格步骤后出现未知弹窗；未发送任何按键，现场保留
+  已停止后续条目：未知现场/无反馈需保留，未再发送按键。
+报告: /workspace/demo/records/06-unknown-popup/report.json
+
+最终处置：
+  [A001] unknown_popup — 价格步骤后出现未知弹窗；未发送任何按键，现场保留
+    保存反馈: 异常弹窗: E97 操作条件需要人工确认
+  [A002] not_attempted — 批处理因前一条未知现场/无反馈而停止；本条未发送任何按键
+
+注意：回读只证明当前值/修订号，不证明恰好一次写入。
+
+--- stderr ---
