@@ -1,0 +1,17 @@
+{
+  "sources": {
+    "slow": {
+      "origin": "http://127.0.0.1:8111",
+      "max_inflight": 1,
+      "queue_limit": 3
+    },
+    "fast": {
+      "origin": "http://127.0.0.1:8112",
+      "max_inflight": 1,
+      "queue_limit": 3
+    }
+  },
+  "global_max_inflight": 2,
+  "allowed_path": "/item",
+  "total_budget_ms": 600
+}
