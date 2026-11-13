@@ -1,0 +1,10 @@
+{
+  "entry_id": "X-cross",
+  "entry_date": "2026-03-28",
+  "lines": [
+    {"account_id": "cash-usd", "currency": "USD", "debit_cents": 500, "credit_cents": 0},
+    {"account_id": "revenue-usd", "currency": "USD", "debit_cents": 0, "credit_cents": 100},
+    {"account_id": "cash-eur", "currency": "EUR", "debit_cents": 100, "credit_cents": 0},
+    {"account_id": "revenue-eur", "currency": "EUR", "debit_cents": 0, "credit_cents": 500}
+  ]
+}

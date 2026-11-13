@@ -1,0 +1,10 @@
+{
+  "entry_id": "E1",
+  "entry_date": "2026-03-05",
+  "lines": [
+    {"account_id": "cash-usd", "currency": "USD", "debit_cents": 120000, "credit_cents": 0},
+    {"account_id": "revenue-usd", "currency": "USD", "debit_cents": 0, "credit_cents": 120000},
+    {"account_id": "cash-eur", "currency": "EUR", "debit_cents": 90000, "credit_cents": 0},
+    {"account_id": "revenue-eur", "currency": "EUR", "debit_cents": 0, "credit_cents": 90000}
+  ]
+}
