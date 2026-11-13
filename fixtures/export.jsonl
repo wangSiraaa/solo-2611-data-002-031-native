@@ -1,0 +1,8 @@
+{"kind": "customer", "subject_id": "U01", "name": "甲", "email": "a@example.invalid", "phone": "10001"}
+{"kind": "order", "subject_id": "U01", "order_id": "O11", "amount_cents": 1200, "note": "请电话联系"}
+{"kind": "order", "subject_id": "U01", "order_id": "O12", "amount_cents": 500, "note": "已交付"}
+{"kind": "customer", "subject_id": "U02", "name": "乙", "email": "b@example.invalid", "phone": "10002"}
+{"kind": "order", "subject_id": "U02", "order_id": "O21", "amount_cents": 2400, "note": "争议处理中"}
+{"kind": "order", "subject_id": "U02", "order_id": "O22", "amount_cents": 800, "note": "已完成"}
+{"kind": "customer", "subject_id": "U03", "name": "丙", "email": "c@example.invalid", "phone": "10003"}
+{"kind": "order", "subject_id": "U03", "order_id": "O31", "amount_cents": 3500, "note": "普通业务"}

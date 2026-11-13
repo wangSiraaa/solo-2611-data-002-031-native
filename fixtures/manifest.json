@@ -1,0 +1,8 @@
+{
+  "database": "business.sqlite",
+  "public_export": "export.jsonl",
+  "subject_column": "subject_id",
+  "registered_exports": [
+    "export.jsonl"
+  ]
+}

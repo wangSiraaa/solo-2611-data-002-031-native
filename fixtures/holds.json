@@ -1,0 +1,10 @@
+{
+  "holds": [
+    {
+      "order_id": "O21",
+      "active": true,
+      "reason": "case-demo",
+      "retain": "order_original_in_restricted_store"
+    }
+  ]
+}
