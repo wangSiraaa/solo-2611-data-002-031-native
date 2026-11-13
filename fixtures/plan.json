@@ -1,0 +1,31 @@
+{
+  "reference_unit": "mg/L",
+  "response_unit": "mV",
+  "reference_shared_offset_sd": 0.3,
+  "shared_error_id": "certificate-01",
+  "working_range": [
+    0,
+    50
+  ],
+  "candidate_degrees": [
+    1,
+    2
+  ],
+  "seed": 1701,
+  "combinations": [
+    {
+      "id": "S2_minus_S1",
+      "terms": {
+        "S2": 1,
+        "S1": -1
+      }
+    },
+    {
+      "id": "pair_mean",
+      "terms": {
+        "S1": 0.5,
+        "S2": 0.5
+      }
+    }
+  ]
+}
