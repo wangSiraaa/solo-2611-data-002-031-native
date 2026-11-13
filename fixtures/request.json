@@ -1,0 +1,18 @@
+{
+  "root": {
+    "schema": "legacy sales",
+    "name": "v Order",
+    "kind": "view"
+  },
+  "target_schema": "new sales",
+  "include_rows": false,
+  "supported_kinds": [
+    "ordinary_table",
+    "sequence",
+    "view",
+    "primary_key",
+    "foreign_key",
+    "default",
+    "sequence_ownership"
+  ]
+}
