@@ -1,0 +1,13 @@
+household_id,stratum,arm,exposed
+H01,S1,A,false
+H02,S1,A,false
+H03,S1,A,false
+H04,S1,A,false
+H05,S1,B,true
+H06,S1,B,false
+H07,S2,A,false
+H08,S2,A,false
+H09,S2,B,true
+H10,S2,B,false
+H11,S2,B,true
+H12,S2,B,true

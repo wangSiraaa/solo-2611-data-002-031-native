@@ -1,0 +1,49 @@
+{
+  "experiment_id": "coupon-demo",
+  "unit": "household_id",
+  "treatment": "B",
+  "control": "A",
+  "assignment_design": "Independent complete randomization within each stratum; uniformly choose exactly treatment_slots eligible households.",
+  "strata": [
+    {
+      "id": "S1",
+      "eligible_households": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06"
+      ],
+      "treatment_slots": 2
+    },
+    {
+      "id": "S2",
+      "eligible_households": [
+        "H07",
+        "H08",
+        "H09",
+        "H10",
+        "H11",
+        "H12"
+      ],
+      "treatment_slots": 4
+    }
+  ],
+  "estimand": "Average household treatment effect across all eligible households, weighting strata by eligible household counts.",
+  "window_start": "2026-11-01T00:00:00Z",
+  "window_end": "2026-11-08T00:00:00Z",
+  "metric": "sum(amount_cents)",
+  "currency": "CNY",
+  "require_complete_coverage": true,
+  "seed": 1701,
+  "inference": {
+    "null": "no effect on any household",
+    "effect_interval_model": "state the interval's assumptions; a constant additive-effect randomization inversion is allowed",
+    "search_bounds_cents": [
+      -5000,
+      5000
+    ],
+    "search_step_cents": 50
+  }
+}
