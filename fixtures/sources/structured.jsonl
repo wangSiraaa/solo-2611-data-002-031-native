@@ -1,0 +1,2 @@
+{"timestamp": "2026-11-03T10:05:00Z", "message": "payment code=E42 user=007 amount=100", "host": "甲"}
+{"timestamp": "2026-11-03T10:05:01Z", "message": "payment code=E43 user=008 amount=3", "host": "乙"}

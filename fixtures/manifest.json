@@ -1,0 +1,53 @@
+{
+  "encoding": "UTF-8",
+  "files": [
+    {
+      "path": "fixtures/sources/app.log",
+      "bytes": 177,
+      "sha256": "c4857119f0e21615de7f4083c42b2e7c57def0b9fed3f22ffe795fd80f9e59ee",
+      "format": "text",
+      "last_event_complete": true
+    },
+    {
+      "path": "fixtures/sources/grammar.log",
+      "bytes": 320,
+      "sha256": "bf53ce14013b34490e638fc7e8dcd74e99ad6b95f5ccd2e8ec94b3d7d7823cae",
+      "format": "text",
+      "last_event_complete": true
+    },
+    {
+      "path": "fixtures/sources/incomplete.log",
+      "bytes": 57,
+      "sha256": "cdf7a99d315b2e8d4b00d17113632189c37d2ada4375772e6c15001a247f7b5f",
+      "format": "text",
+      "last_event_complete": false
+    },
+    {
+      "path": "fixtures/sources/no_newline.log",
+      "bytes": 58,
+      "sha256": "dec0e72a27342a7ef5b8b0f8060b62144d2578cb1a09792a44fd76728df72b97",
+      "format": "text",
+      "last_event_complete": true
+    },
+    {
+      "path": "fixtures/sources/orphan.log",
+      "bytes": 79,
+      "sha256": "77af91b9e6f042efdbceb87a52872672ff79946da43db7be196baf563df8bcc1",
+      "format": "text",
+      "last_event_complete": true
+    },
+    {
+      "path": "fixtures/sources/structured.jsonl",
+      "bytes": 206,
+      "sha256": "5c10944f1892320e164bcee68a7d234b92824798934317d760cea0614aa27289",
+      "format": "jsonl",
+      "last_event_complete": true
+    },
+    {
+      "path": "fixtures/sources/unknown_tail.log",
+      "bytes": 55,
+      "sha256": "b4a520c177c9ae59943f4c35003cc7ce6fd3cef3323cb25efd59f9391257cb6b",
+      "format": "text"
+    }
+  ]
+}

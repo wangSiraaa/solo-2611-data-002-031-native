@@ -1,0 +1,76 @@
+{
+  "revision": "B",
+  "match": "fullmatch_dotall",
+  "max_candidate_lines": 3,
+  "block_boundary": "blank_line",
+  "rules": [
+    {
+      "id": "payment_E42",
+      "pattern": "payment code=E42 user=(?P<user>\\S+) amount=(?P<amount>\\S+)(?:\\n  .*)*",
+      "fields": {
+        "user": "string",
+        "amount": "decimal"
+      }
+    },
+    {
+      "id": "payment_E43",
+      "pattern": "payment code=E43 user=(?P<user>\\S+) amount=(?P<amount>\\S+)",
+      "fields": {
+        "user": "string",
+        "amount": "decimal"
+      }
+    },
+    {
+      "id": "head",
+      "pattern": "BEGIN task=(?P<task>[A-Z])",
+      "fields": {
+        "task": "string"
+      }
+    },
+    {
+      "id": "end",
+      "pattern": "END task=(?P<task>[A-Z])",
+      "fields": {
+        "task": "string"
+      }
+    },
+    {
+      "id": "job",
+      "pattern": "BEGIN task=(?P<task>[A-Z])\\n\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z part value=(?P<value>\\d+)\\n\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z END task=(?P=task)",
+      "fields": {
+        "task": "string",
+        "value": "int"
+      }
+    },
+    {
+      "id": "short_job",
+      "pattern": "BEGIN task=(?P<task>[A-Z])\\n\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z END task=(?P=task)",
+      "fields": {
+        "task": "string"
+      }
+    },
+    {
+      "id": "part_end",
+      "pattern": "part value=(?P<value>\\d+)\\n\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z END task=(?P<task>[A-Z])",
+      "fields": {
+        "value": "int",
+        "task": "string"
+      }
+    },
+    {
+      "id": "pair_part",
+      "pattern": "PAIR id=(?P<id>[A-Z]) part=(?P<part>[12])",
+      "fields": {
+        "id": "string",
+        "part": "int"
+      }
+    },
+    {
+      "id": "phase",
+      "pattern": "PHASE id=(?P<id>[A-Z]) begin\\n\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z PHASE id=(?P=id) done",
+      "fields": {
+        "id": "string"
+      }
+    }
+  ]
+}
