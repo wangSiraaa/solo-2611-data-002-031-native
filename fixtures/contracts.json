@@ -1,0 +1,20 @@
+[
+  {
+    "contract_id": "TARGET-A",
+    "start_date": "2025-01-31",
+    "maturity_date": "2027-01-31",
+    "coupon_months": 6,
+    "coupon_rate": "0.032",
+    "principal": "100",
+    "end_of_month": true
+  },
+  {
+    "contract_id": "TARGET-B",
+    "start_date": "2025-02-14",
+    "maturity_date": "2026-02-14",
+    "coupon_months": 6,
+    "coupon_rate": "0.025",
+    "principal": "100",
+    "end_of_month": false
+  }
+]

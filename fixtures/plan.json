@@ -1,0 +1,12 @@
+{
+  "valuation_date": "2025-02-14",
+  "currency": "SIM",
+  "day_count": "ACT/365",
+  "scenario": {
+    "quote_id": "BOND-2Y",
+    "field": "clean_price",
+    "absolute_shift": "0.05"
+  },
+  "no_stub_periods": true,
+  "same_day_payment_rule": "payments on valuation date are treated as paid"
+}

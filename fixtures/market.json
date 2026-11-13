@@ -1,0 +1,38 @@
+{
+  "deposits": [
+    {
+      "quote_id": "DEP-3M",
+      "start_date": "2025-02-14",
+      "maturity_date": "2025-05-14",
+      "simple_rate": "0.021"
+    },
+    {
+      "quote_id": "DEP-6M",
+      "start_date": "2025-02-14",
+      "maturity_date": "2025-08-14",
+      "simple_rate": "0.023"
+    }
+  ],
+  "bonds": [
+    {
+      "quote_id": "BOND-1Y",
+      "start_date": "2025-01-31",
+      "maturity_date": "2026-01-31",
+      "coupon_months": 6,
+      "coupon_rate": "0.026",
+      "principal": "100",
+      "end_of_month": true,
+      "clean_price": "99.90"
+    },
+    {
+      "quote_id": "BOND-2Y",
+      "start_date": "2025-01-31",
+      "maturity_date": "2027-01-31",
+      "coupon_months": 6,
+      "coupon_rate": "0.031",
+      "principal": "100",
+      "end_of_month": true,
+      "clean_price": "100.10"
+    }
+  ]
+}
