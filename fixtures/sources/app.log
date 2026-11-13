@@ -1,0 +1,6 @@
+2026-11-03T10:00:00Z payment code=E42 user=001 amount=12.50
+  gateway: declined
+
+2026-11-03T10:00:01Z payment code=E43 user=002 amount=7
+
+2026-11-03T10:00:02Z worker state=idle
