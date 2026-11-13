@@ -1,0 +1,62 @@
+[
+  {
+    "comment_id": "C1",
+    "paragraph_id": "a1",
+    "start": 11,
+    "end": 20,
+    "quote": "审批通过后方可下单",
+    "before": "请应附预算依据。",
+    "after": "。",
+    "note": "请核对本处要求。"
+  },
+  {
+    "comment_id": "C2",
+    "paragraph_id": "a4",
+    "start": 6,
+    "end": 15,
+    "quote": "合同、验收单和发票",
+    "before": "付款前应核对",
+    "after": "。",
+    "note": "请核对本处要求。"
+  },
+  {
+    "comment_id": "C3",
+    "paragraph_id": "a6",
+    "start": 4,
+    "end": 8,
+    "quote": "保存三年",
+    "before": "纸质材料",
+    "after": "。",
+    "note": "请核对本处要求。"
+  },
+  {
+    "comment_id": "C4",
+    "paragraph_id": "a3",
+    "start": 19,
+    "end": 21,
+    "quote": "é",
+    "before": "é 与组合字符 ",
+    "after": "，引用必须保留原",
+    "note": "请核对本处要求。"
+  },
+  {
+    "comment_id": "C5",
+    "paragraph_id": "a2",
+    "start": 5,
+    "end": 10,
+    "quote": "负责人确认",
+    "before": "特殊事项由",
+    "after": "。",
+    "note": "请核对本处要求。"
+  },
+  {
+    "comment_id": "C6",
+    "paragraph_id": "a1",
+    "start": 21,
+    "end": 21,
+    "quote": "",
+    "before": "审批通过后方可下单。",
+    "after": "",
+    "note": "此处补充附件说明。"
+  }
+]
