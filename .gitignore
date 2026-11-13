@@ -11,3 +11,6 @@ venv/
 htmlcov/
 .DS_Store
 *.log
+pgsql-data/
+pgsql.log
+exports/
