@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webfrontier"
+version = "1.0.0"
+description = "Config-scoped multi-site directory crawler with a SQLite frontier"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx==0.28.1",
+    "selectolax==0.3.27",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+
+[project.scripts]
+webfrontier = "webfrontier.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,35 @@
+{
+  "user_agent": "CoopDirectoryBot/1.0 (+local synthetic directory crawler)",
+  "database": "../.runtime/nav-crawl.db",
+  "origins": [
+    {
+      "origin": "http://127.0.0.1:8811",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 4,
+      "min_request_interval": 0.0
+    }
+  ],
+  "limits": {
+    "max_depth": 20,
+    "page_budget": 12000,
+    "max_redirects": 3,
+    "per_origin_concurrency": 4,
+    "min_request_interval": 0.0,
+    "max_body_bytes": 65536,
+    "timeout_seconds": 6.0,
+    "max_attempts": 3,
+    "retry_backoff_seconds": [
+      0.2,
+      0.5,
+      1.0
+    ],
+    "robots_max_bytes": 524288,
+    "robots_max_attempts": 3,
+    "metrics_every": 200
+  }
+}

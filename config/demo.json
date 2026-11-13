@@ -1,0 +1,90 @@
+{
+  "user_agent": "CoopDirectoryBot/1.0 (+local synthetic directory crawler)",
+  "database": "../.runtime/demo-crawl.db",
+  "origins": [
+    {
+      "origin": "http://127.0.0.1:8801",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 2,
+      "min_request_interval": 0.12
+    },
+    {
+      "origin": "http://127.0.0.1:8802",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 2,
+      "min_request_interval": 0.12
+    },
+    {
+      "origin": "http://127.0.0.1:8803",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 1,
+      "min_request_interval": 0.12
+    },
+    {
+      "origin": "http://127.0.0.1:8804",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 2,
+      "min_request_interval": 0.12
+    },
+    {
+      "origin": "http://127.0.0.1:8805",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 1,
+      "min_request_interval": 0.12
+    },
+    {
+      "origin": "http://127.0.0.1:8806",
+      "path_prefixes": [
+        "/"
+      ],
+      "seeds": [
+        "/"
+      ],
+      "concurrency": 1,
+      "min_request_interval": 0.12
+    }
+  ],
+  "limits": {
+    "max_depth": 3,
+    "page_budget": 420,
+    "max_redirects": 4,
+    "per_origin_concurrency": 2,
+    "min_request_interval": 0.12,
+    "max_body_bytes": 262144,
+    "timeout_seconds": 6.0,
+    "max_attempts": 3,
+    "retry_backoff_seconds": [
+      0.4,
+      1.0,
+      2.0
+    ],
+    "robots_max_bytes": 524288,
+    "robots_max_attempts": 3,
+    "metrics_every": 10
+  }
+}
