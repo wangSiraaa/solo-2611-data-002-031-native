@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "name": "t-alpha-sales",
+      "org_label": "Alpha 制造",
+      "month_label": "2023年2月",
+      "report_type": "销售汇总"
+    },
+    {
+      "name": "t-beta-cost",
+      "org_label": "Beta 商贸",
+      "month_label": "2024年7月",
+      "report_type": "成本明细"
+    },
+    {
+      "name": "t-gamma-stock",
+      "org_label": "Gamma 物流",
+      "month_label": "2023年11月",
+      "report_type": "库存周转"
+    },
+    {
+      "name": "t-delta-audit",
+      "org_label": "Delta 研发",
+      "month_label": "2024年3月",
+      "report_type": "审计台账"
+    }
+  ]
+}

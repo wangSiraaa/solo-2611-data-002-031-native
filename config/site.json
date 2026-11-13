@@ -1,0 +1,24 @@
+{
+  "base_url": "http://127.0.0.1:8765",
+  "login_url": "/",
+  "credentials": {
+    "username": "ops",
+    "password": "demo-pass"
+  },
+  "retry_limit": 2,
+  "forms": {
+    "login": "login",
+    "org": "select_org",
+    "params": "report_params",
+    "download": "download",
+    "username_control": "username",
+    "password_control": "password",
+    "org_control": "org",
+    "month_control": "month",
+    "type_control": "rtype",
+    "section_control": "columns",
+    "section_labels": [
+      "显示摘要"
+    ]
+  }
+}

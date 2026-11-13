@@ -1,0 +1,6 @@
+# The helper and the synthetic site use only the Python 3.11 standard
+# library (http.client, html.parser, sqlite3, csv, json).  No third-party
+# packages are required to run either component.
+#
+# Optional extras used only by the scenario harness for cross-checking:
+# (none needed — the harness also uses stdlib only)
