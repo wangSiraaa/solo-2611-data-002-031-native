@@ -1,0 +1,20 @@
+{
+  "postgres_schema": "fed_input",
+  "postgres_table": "orders",
+  "http_origin": "http://127.0.0.1:8107",
+  "http_path": "/products",
+  "capabilities": {
+    "ids_in": true,
+    "category_eq": true,
+    "projection": true
+  },
+  "types": {
+    "orders.id": "int64",
+    "orders.product_id": "int64?",
+    "orders.region": "string",
+    "orders.amount": "decimal?",
+    "products.id": "int64?",
+    "products.name": "string",
+    "products.category": "string?"
+  }
+}

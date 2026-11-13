@@ -1,0 +1,32 @@
+[
+  {
+    "id": 10,
+    "name": "茶",
+    "category": "food"
+  },
+  {
+    "id": 10,
+    "name": "茶-旧包装",
+    "category": "food"
+  },
+  {
+    "id": 20,
+    "name": "杯",
+    "category": "home"
+  },
+  {
+    "id": 30,
+    "name": "糖",
+    "category": null
+  },
+  {
+    "id": null,
+    "name": "未登记",
+    "category": "food"
+  },
+  {
+    "id": 50,
+    "name": "米",
+    "category": "food"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "name": "filter_in_on",
+    "orders_region": "north",
+    "join": "LEFT",
+    "product_category": "food",
+    "filter_placement": "ON",
+    "select": [
+      "orders.id",
+      "orders.amount",
+      "products.name"
+    ]
+  },
+  {
+    "name": "filter_in_where",
+    "orders_region": "north",
+    "join": "LEFT",
+    "product_category": "food",
+    "filter_placement": "WHERE",
+    "select": [
+      "orders.id",
+      "products.name"
+    ]
+  },
+  {
+    "name": "inner",
+    "orders_region": "south",
+    "join": "INNER",
+    "product_category": null,
+    "filter_placement": "ON",
+    "select": [
+      "orders.id",
+      "products.category"
+    ]
+  }
+]
