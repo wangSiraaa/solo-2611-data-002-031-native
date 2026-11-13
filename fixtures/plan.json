@@ -1,0 +1,21 @@
+{
+  "origins": [
+    "2025-02-10T12:00:00Z",
+    "2025-02-17T12:00:00Z",
+    "2025-03-03T12:00:00Z"
+  ],
+  "training_days": 35,
+  "horizon_days": 3,
+  "seasonal_lag": 7,
+  "model": {
+    "kind": "ridge",
+    "alpha": 1.0,
+    "lags": [
+      1,
+      7
+    ]
+  },
+  "evaluation_as_of": "2025-04-01T00:00:00Z",
+  "seed": 119,
+  "target_date_rule": "UTC date after origin, starting next calendar day"
+}
