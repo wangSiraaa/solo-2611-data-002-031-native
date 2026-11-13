@@ -1,0 +1,21 @@
+{
+  "document_id": "demo-move",
+  "version": "A",
+  "chapters": [
+    {
+      "chapter_id": "ca",
+      "title": "第一章",
+      "paragraphs": [
+        {"id": "p1", "text": "目标段落内容。"},
+        {"id": "p2", "text": "其他内容。"}
+      ]
+    },
+    {
+      "chapter_id": "cb",
+      "title": "第二章",
+      "paragraphs": [
+        {"id": "p3", "text": "尾巴。"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "document_id": "demo-comb",
+  "version": "B",
+  "chapters": [
+    {
+      "chapter_id": "n1",
+      "title": "\u7ae0",
+      "paragraphs": [
+        {
+          "id": "q1",
+          "text": "\u524d\u7f00 e\u0301 \u540e\u7f00\u3002"
+        },
+        {
+          "id": "q2",
+          "text": "\u540d\u79f0 Cafe\u0301 \u7ed3\u675f\u3002"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "comment_id": "C1",
+    "paragraph_id": "p1",
+    "start": 5,
+    "end": 10,
+    "quote": "目标引用句",
+    "before": "开头说明。",
+    "after": "。结尾说明。",
+    "note": "引用前后都有局部删改，但引用完整保留，应按对齐结果迁移到 [7,12)，不能按总长度差平移。"
+  },
+  {
+    "comment_id": "C2",
+    "paragraph_id": "p1",
+    "start": 11,
+    "end": 15,
+    "quote": "结尾说明",
+    "before": "。目标引用句。",
+    "after": "。",
+    "note": "引用本身被删除，应保持未解决。"
+  },
+  {
+    "comment_id": "C3",
+    "paragraph_id": "p2",
+    "start": 3,
+    "end": 8,
+    "quote": "目标引用句",
+    "before": "另一段",
+    "after": "。",
+    "note": "引用被局部改写（句->问），应保持未解决。"
+  }
+]

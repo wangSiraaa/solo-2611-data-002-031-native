@@ -1,0 +1,4 @@
+{
+  "migrated": {"C1": ["q1", 7, 12]},
+  "unresolved": {"C2": "quote_deleted", "C3": "quote_moved_across_paragraphs"}
+}

@@ -1,0 +1,29 @@
+{
+  "document_id": "demo-dup",
+  "version": "A",
+  "chapters": [
+    {
+      "chapter_id": "ca",
+      "title": "甲",
+      "paragraphs": [
+        {"id": "pa1", "text": "重复句。"},
+        {"id": "pa2", "text": "独有甲句。"}
+      ]
+    },
+    {
+      "chapter_id": "cb",
+      "title": "乙",
+      "paragraphs": [
+        {"id": "pb1", "text": "重复句。"},
+        {"id": "pb2", "text": "独有乙句。"}
+      ]
+    },
+    {
+      "chapter_id": "cc",
+      "title": "丙",
+      "paragraphs": [
+        {"id": "pc1", "text": "重复句。"}
+      ]
+    }
+  ]
+}

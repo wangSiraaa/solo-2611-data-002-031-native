@@ -1,0 +1,22 @@
+[
+  {
+    "comment_id": "C1",
+    "paragraph_id": "p1",
+    "start": 3,
+    "end": 5,
+    "quote": "e\u0301",
+    "before": "\u524d\u7f00 ",
+    "after": " \u540e\u7f00\u3002",
+    "note": "\u5206\u89e3\u5f62\u5f0f e+\u7ec4\u5408\u7b26\uff082 \u4e2a\u7801\u70b9\uff09\u539f\u6837\u4fdd\u7559\uff0c\u5e94\u8fc1\u79fb\u5230\u76f8\u540c\u7801\u70b9\u8303\u56f4\u3002"
+  },
+  {
+    "comment_id": "C2",
+    "paragraph_id": "p2",
+    "start": 6,
+    "end": 7,
+    "quote": "\u00e9",
+    "before": "\u540d\u79f0 Caf",
+    "after": " \u7ed3\u675f\u3002",
+    "note": "\u65e7\u6587\u4e3a\u9884\u7ec4\u5408 \u00e9\uff081 \u7801\u70b9\uff09\uff0c\u65b0\u6587\u6539\u4e3a\u5206\u89e3\u5f62\u5f0f\uff0c\u7801\u70b9\u4e0d\u540c\uff0c\u5e94\u4fdd\u6301\u672a\u89e3\u51b3\u3002"
+  }
+]

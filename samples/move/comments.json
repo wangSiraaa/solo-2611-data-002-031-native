@@ -1,0 +1,12 @@
+[
+  {
+    "comment_id": "C1",
+    "paragraph_id": "p1",
+    "start": 0,
+    "end": 4,
+    "quote": "目标段落",
+    "before": "",
+    "after": "内容。",
+    "note": "段落整体移动到另一章。"
+  }
+]

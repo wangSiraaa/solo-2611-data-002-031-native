@@ -1,0 +1,4 @@
+{
+  "migrated": {"C1": ["qa1", 0, 3], "C2": ["qb1", 0, 3]},
+  "unresolved": {"C3": "ambiguous"}
+}

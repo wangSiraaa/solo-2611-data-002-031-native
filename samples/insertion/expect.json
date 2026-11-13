@@ -1,0 +1,4 @@
+{
+  "migrated": {"C1": ["q1", 8, 8]},
+  "unresolved": {"C2": "insertion_context_ambiguous", "C3": "insertion_context_missing"}
+}

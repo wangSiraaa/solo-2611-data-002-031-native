@@ -1,0 +1,13 @@
+{
+  "document_id": "demo-ins",
+  "version": "A",
+  "chapters": [
+    {
+      "chapter_id": "c1",
+      "title": "章",
+      "paragraphs": [
+        {"id": "p1", "text": "第一句。第二句。"}
+      ]
+    }
+  ]
+}

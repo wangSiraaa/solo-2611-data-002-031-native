@@ -1,0 +1,32 @@
+[
+  {
+    "comment_id": "C1",
+    "paragraph_id": "p1",
+    "start": 4,
+    "end": 4,
+    "quote": "",
+    "before": "第一句。",
+    "after": "第二句。",
+    "note": "插入点：前后上下文唯一，可迁移到偏移 8。"
+  },
+  {
+    "comment_id": "C2",
+    "paragraph_id": "p1",
+    "start": 4,
+    "end": 4,
+    "quote": "",
+    "before": "。",
+    "after": "",
+    "note": "插入点：上下文太短，新文中有多个位置，应保持未解决。"
+  },
+  {
+    "comment_id": "C3",
+    "paragraph_id": "p1",
+    "start": 4,
+    "end": 4,
+    "quote": "",
+    "before": "",
+    "after": "",
+    "note": "插入点：完全没有上下文，应保持未解决。"
+  }
+]

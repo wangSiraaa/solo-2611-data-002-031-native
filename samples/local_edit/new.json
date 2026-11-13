@@ -1,0 +1,14 @@
+{
+  "document_id": "demo-edit",
+  "version": "B",
+  "chapters": [
+    {
+      "chapter_id": "n1",
+      "title": "章",
+      "paragraphs": [
+        {"id": "q1", "text": "开头补充说明。目标引用句。结尾。"},
+        {"id": "q2", "text": "另一段目标引问句。"}
+      ]
+    }
+  ]
+}

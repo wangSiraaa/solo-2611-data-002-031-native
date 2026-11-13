@@ -1,0 +1,20 @@
+{
+  "document_id": "demo-comb",
+  "version": "A",
+  "chapters": [
+    {
+      "chapter_id": "c1",
+      "title": "\u7ae0",
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "\u524d\u7f00 e\u0301 \u540e\u7f00\u3002"
+        },
+        {
+          "id": "p2",
+          "text": "\u540d\u79f0 Caf\u00e9 \u7ed3\u675f\u3002"
+        }
+      ]
+    }
+  ]
+}

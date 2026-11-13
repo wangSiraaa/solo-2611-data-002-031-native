@@ -1,0 +1,22 @@
+{
+  "document_id": "demo-dup",
+  "version": "B",
+  "chapters": [
+    {
+      "chapter_id": "nb",
+      "title": "乙",
+      "paragraphs": [
+        {"id": "qb2", "text": "独有乙句。"},
+        {"id": "qb1", "text": "重复句。"}
+      ]
+    },
+    {
+      "chapter_id": "na",
+      "title": "甲",
+      "paragraphs": [
+        {"id": "qa1", "text": "重复句。"},
+        {"id": "qa2", "text": "独有甲句。"}
+      ]
+    }
+  ]
+}

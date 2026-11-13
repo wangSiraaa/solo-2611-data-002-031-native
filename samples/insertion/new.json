@@ -1,0 +1,13 @@
+{
+  "document_id": "demo-ins",
+  "version": "B",
+  "chapters": [
+    {
+      "chapter_id": "n1",
+      "title": "章",
+      "paragraphs": [
+        {"id": "q1", "text": "新开头。第一句。第二句。"}
+      ]
+    }
+  ]
+}

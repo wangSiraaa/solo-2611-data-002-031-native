@@ -1,0 +1,32 @@
+[
+  {
+    "comment_id": "C1",
+    "paragraph_id": "pa1",
+    "start": 0,
+    "end": 3,
+    "quote": "重复句",
+    "before": "",
+    "after": "。",
+    "note": "甲章重复句，应靠章节上下文对应到 qa1（文件中 qb1 排在前面，不能取第一个）。"
+  },
+  {
+    "comment_id": "C2",
+    "paragraph_id": "pb1",
+    "start": 0,
+    "end": 3,
+    "quote": "重复句",
+    "before": "",
+    "after": "。",
+    "note": "乙章重复句，应对应 qb1。"
+  },
+  {
+    "comment_id": "C3",
+    "paragraph_id": "pc1",
+    "start": 0,
+    "end": 3,
+    "quote": "重复句",
+    "before": "",
+    "after": "。",
+    "note": "丙章已删除，两个候选无法区分，应保持未解决。"
+  }
+]
