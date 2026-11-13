@@ -1,0 +1,63 @@
+{
+  "logs_dir": "logs",
+  "results_dir": "runs/results",
+  "db_path": "runs/host.db",
+  "quiet": false,
+  "connectors": {
+    "fast": {
+      "command": ["connectors/fast_connector.py"],
+      "data_dir": "data",
+      "limits": {
+        "max_inflight": 4,
+        "max_message_bytes": 1048576,
+        "wait_timeout_s": 15.0,
+        "data_cap_bytes": 4194304,
+        "cancel_grace_s": 5.0,
+        "stderr_keep_lines": 200,
+        "stderr_log_max_bytes": 262144
+      }
+    },
+    "reorder": {
+      "command": ["connectors/reorder_connector.py"],
+      "data_dir": "data",
+      "limits": {
+        "max_inflight": 6,
+        "max_message_bytes": 1048576,
+        "wait_timeout_s": 20.0,
+        "data_cap_bytes": 4194304,
+        "cancel_grace_s": 5.0,
+        "stderr_keep_lines": 200,
+        "stderr_log_max_bytes": 262144
+      }
+    },
+    "progress": {
+      "command": ["connectors/progress_connector.py"],
+      "data_dir": "data",
+      "limits": {
+        "max_inflight": 3,
+        "max_message_bytes": 1048576,
+        "wait_timeout_s": 20.0,
+        "data_cap_bytes": 4194304,
+        "cancel_grace_s": 5.0,
+        "stderr_keep_lines": 200,
+        "stderr_log_max_bytes": 262144
+      }
+    },
+    "chaos": {
+      "command": ["connectors/chaos_connector.py"],
+      "data_dir": "data",
+      "env": {
+        "CHAOS_MODE": ""
+      },
+      "limits": {
+        "max_inflight": 3,
+        "max_message_bytes": 65536,
+        "wait_timeout_s": 4.0,
+        "data_cap_bytes": 2097152,
+        "cancel_grace_s": 3.0,
+        "stderr_keep_lines": 100,
+        "stderr_log_max_bytes": 131072
+      }
+    }
+  }
+}

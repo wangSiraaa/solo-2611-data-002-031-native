@@ -1,0 +1,10 @@
+# 宿主命令样例脚本（可用 run-script 执行，也可逐行复制到 shell）
+# 以 # 开头的行会被 run-script 忽略。
+
+list-sources
+list-sources --connector progress
+query --connector fast --source fast_orders --fields id,name,region,amount --filter region:eq=华北 --filter amount:gt=100
+query --connector progress --source progress_inventory --fields id,name,score --filter score:ge=80
+query --connector reorder --source reorder_shipments --fields id,category --filter category:eq=物流
+status
+export --out runs/manifest-from-script.json
